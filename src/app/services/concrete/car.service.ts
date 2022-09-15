@@ -11,7 +11,7 @@ import { ListResponseModel } from 'src/app/models/listResponseModel';
 })
 export class CarService implements ICarService {
 
-  baseUrl: string = 'http://localhost:4200/api/cars/';
+  baseUrl: string = 'https://localhost:44343/api/cars/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class CarService implements ICarService {
   }
 
   getAllCarDetails(): Observable<ListResponseModel<CarDetail>> {
-    throw new Error('Method not implemented.');
+    return this.httpClient.get<ListResponseModel<CarDetail>>(this.baseUrl + 'getallcardetails');
   }
 
 }

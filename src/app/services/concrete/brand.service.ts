@@ -11,7 +11,7 @@ import { IBrandService } from '../abstract/iBrandService';
 })
 export class BrandService implements IBrandService {
 
-  baseUrl: string = 'http://localhost:4200/api/brands/';
+  baseUrl: string = 'https://localhost:44343/api/brands/';
 
   constructor(private httpClient: HttpClient) { }
 

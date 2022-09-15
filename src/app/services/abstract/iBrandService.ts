@@ -5,9 +5,11 @@ import { ResponseModel } from "src/app/models/responseModel";
 import { SingleResponseModel } from "src/app/models/singleResponseModel";
 
 export interface IBrandService {
-  GetById(id: number): Observable<SingleResponseModel<Brand>>;
-  GetAll(): Observable<ListResponseModel<Brand>>
-  Add(brand: Brand): Observable<ResponseModel>
-  Update(brand: Brand): Observable<ResponseModel>
-  Delete(brand: Brand): Observable<ResponseModel>
+
+  getById(id: number): Observable<SingleResponseModel<Brand>>;
+  getAll(): Observable<ListResponseModel<Brand>>;
+  add(brand: Brand): Observable<ResponseModel>;
+  update(brand: Brand): Observable<ResponseModel>;
+  delete(brand: Brand): Observable<ResponseModel>;
+
 }

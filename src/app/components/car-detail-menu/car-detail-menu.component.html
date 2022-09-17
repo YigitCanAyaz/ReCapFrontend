@@ -1,1 +1,21 @@
-<p>car-detail-menu works!</p>
+<div class="row">
+  <div class="col-md-4" *ngFor="let carDetail of carDetails">
+    <div class="card" style="width: 18rem;">
+      <img src="https://localhost:44343/{{carDetail.imagePath[0]}}" class="card-img-top"
+        alt="{{carDetail.brandName}}-image">
+      <div class="card-body">
+        <h4 class="card-title text-center">{{carDetail.brandName}} </h4>
+        <h6 class="text-center">{{carDetail.modelName}} </h6>
+      </div>
+      <ul class="list-group list-group-flush text-center text-bolder">
+        <li class="list-group-item"><i><b>Model Year</b></i> | {{carDetail.modelYear}}</li>
+        <li class="list-group-item"><i><b>Daily Price</b></i> | {{carDetail.dailyPrice + "₺" }}</li>
+      </ul>
+      <div class="card-body text-center">
+        <a href="#" class="btn btn-outline-secondary" routerLink="/cars/car-detail-page/{{carDetail.id}}">Detaya Git</a>
+      </div>
+    </div>
+    <br>
+  </div>
+
+</div>

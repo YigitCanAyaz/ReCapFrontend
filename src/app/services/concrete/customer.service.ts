@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CustomerDetail } from 'src/app/models/details/customerDetail';
 import { Customer } from 'src/app/models/entities/customer';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
+import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 import { ICustomerService } from '../abstract/iCustomerService';
 
 @Injectable({
@@ -15,12 +16,24 @@ export class CustomerService implements ICustomerService {
 
   constructor(private httpClient: HttpClient) { }
 
+  getById(id: number): Observable<SingleResponseModel<Customer>> {
+    const path = this.baseUrl + "getbyid?id=" + id;
+    return this.httpClient.get<SingleResponseModel<Customer>>(path);
+  }
+
+  getCustomerDetailsById(id: number): Observable<SingleResponseModel<CustomerDetail>> {
+    const path = this.baseUrl + "getcustomerdetailsbyid?id=" + id;
+    return this.httpClient.get<SingleResponseModel<CustomerDetail>>(path);
+  }
+
   getAll(): Observable<ListResponseModel<Customer>> {
-    return this.httpClient.get<ListResponseModel<Customer>>(this.baseUrl + 'getall');
+    const path = this.baseUrl + 'getall';
+    return this.httpClient.get<ListResponseModel<Customer>>(path);
   }
 
   getAllCustomerDetails(): Observable<ListResponseModel<CustomerDetail>> {
-    return this.httpClient.get<ListResponseModel<CustomerDetail>>(this.baseUrl + 'getallcustomerdetails');
+    const path = this.baseUrl + 'getallcustomerdetails';
+    return this.httpClient.get<ListResponseModel<CustomerDetail>>(path);
   }
 
 }

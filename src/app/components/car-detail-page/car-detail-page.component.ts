@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CarDetail } from 'src/app/models/details/carDetail';
+import { CarService } from 'src/app/services/concrete/car.service';
 
 @Component({
   selector: 'app-car-detail-page',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarDetailPageComponent implements OnInit {
 
-  constructor() { }
+  carDetail: CarDetail;
+  dataLoaded: boolean = false;
+
+  constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.getCarDetailsById(params["id"]);
+    });
   }
 
+  getCarDetailsById(id: number): void {
+    this.carService.getCarDetailsById(id).subscribe(result => {
+      this.carDetail = result.data;
+      this.dataLoaded = true;
+    })
+  }
 }

@@ -9,6 +9,8 @@ import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { ModelComponent } from './components/model/model.component';
 import { RentalComponent } from './components/rental/rental.component';
+import { CarDetailMenuComponent } from './components/car-detail-menu/car-detail-menu.component';
+import { CarDetailPageComponent } from './components/car-detail-page/car-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RentalComponent } from './components/rental/rental.component';
     ColorComponent,
     CustomerComponent,
     ModelComponent,
-    RentalComponent
+    RentalComponent,
+    CarDetailMenuComponent,
+    CarDetailPageComponent
   ],
   imports: [
     BrowserModule,

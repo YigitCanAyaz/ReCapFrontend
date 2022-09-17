@@ -11,7 +11,6 @@ import { Car } from 'src/app/models/entities/car';
 export class CarComponent implements OnInit {
 
   cars: Car[] = [];
-  carDetails: CarDetail[] = [];
   dataLoaded: boolean = false;
 
   constructor(private carService: CarService) { }
@@ -25,12 +24,4 @@ export class CarComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
-
-  getAllCarDetails(): void {
-    this.carService.getAllCarDetails().subscribe(result => {
-      this.carDetails = result.data;
-      this.dataLoaded = true;
-    });
-  }
-
 }

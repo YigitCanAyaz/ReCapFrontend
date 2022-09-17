@@ -16,7 +16,11 @@ export class CarDetailMenuComponent implements OnInit {
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getAllCarDetails();
+    this.activatedRoute.params.subscribe(params => {
+      if (params["brandId"]) {
+
+      }
+    });
   }
 
   getAllCarDetails(): void {

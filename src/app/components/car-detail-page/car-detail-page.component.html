@@ -1,27 +1,29 @@
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">brandName</th>
-      <th scope="col">modelName</th>
-      <th scope="col">colorName</th>
-      <th scope="col">modelYear</th>
-      <th scope="col">dailyPrice</th>
-      <th scope="col">description</th>
-      <th scope="col">colorName</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{{carDetail.id}}</th>
-      <td>{{carDetail.brandName}}</td>
-      <td>{{carDetail.modelName}}</td>
-      <td>{{carDetail.colorName}}</td>
-      <td>{{carDetail.modelYear}}</td>
-      <td>{{carDetail.dailyPrice}}</td>
-      <td>{{carDetail.description}}</td>
-      <td>{{carDetail.colorName}}</td>
-    </tr>
-  </tbody>
-</table>
-<img src="https://localhost:44343/{{carDetail.imagePath}}" alt="{{carDetail.modelName}}-image" />
+<div *ngIf="dataLoaded===true">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">brandName</th>
+        <th scope="col">modelName</th>
+        <th scope="col">colorName</th>
+        <th scope="col">modelYear</th>
+        <th scope="col">dailyPrice</th>
+        <th scope="col">description</th>
+        <th scope="col">colorName</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{carDetail.id}}</th>
+        <td>{{carDetail.brandName}}</td>
+        <td>{{carDetail.modelName}}</td>
+        <td>{{carDetail.colorName}}</td>
+        <td>{{carDetail.modelYear}}</td>
+        <td>{{carDetail.dailyPrice}}</td>
+        <td>{{carDetail.description}}</td>
+        <td>{{carDetail.colorName}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <img [src]="getCarImage(carDetail)" alt="{{carDetail.modelName}}-image" />
+</div>

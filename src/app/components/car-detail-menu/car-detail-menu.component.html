@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-md-3" *ngFor="let carDetail of carDetails">
     <div class="card">
-      <img src="https://localhost:44343/{{carDetail.imagePath[0]}}" class="card-img-top"
-        alt="{{carDetail.brandName}}-image" style="height: 20vh;">
+      <img [src]="getCarImage(carDetail)" class="card-img-top" alt="{{carDetail.modelName}}-image"
+        style="height: 20vh;">
       <div class="card-body">
         <h4 class="card-title text-center">{{carDetail.brandName}} </h4>
         <h6 class="text-center">{{carDetail.modelName}} </h6>

@@ -1,17 +1,16 @@
+import { ColorService } from './../../services/concrete/color.service';
 import { Component, OnInit } from '@angular/core';
 import { Color } from 'src/app/models/entities/color';
-import { ColorService } from 'src/app/services/concrete/color.service';
 
 @Component({
   selector: 'app-color',
   templateUrl: './color.component.html',
   styleUrls: ['./color.component.css']
 })
-
 export class ColorComponent implements OnInit {
 
   colors: Color[] = [];
-  dataLoaded: boolean = false;
+  currentColor: Color;
 
   constructor(private colorService: ColorService) { }
 
@@ -20,9 +19,30 @@ export class ColorComponent implements OnInit {
   }
 
   getAll(): void {
-    this.colorService.getAll().subscribe(result => {
-      this.colors = result.data;
-      this.dataLoaded = true;
+    this.colorService.getAll().subscribe(response => {
+      this.colors = response.data;
     });
   }
+
+  setCurrentColor(color: Color): void {
+    this.currentColor = color;
+  }
+
+  getCurrentColorClass(color: Color) {
+    if (color == this.currentColor) {
+      return "list-group-item active";
+    } else {
+      return "list-group-item";
+    }
+  }
+
+  getAllColorClass() {
+    if (!this.currentColor) {
+      return "list-group-item active";
+    } else {
+      return "list-group-item";
+    }
+  }
+
+
 }

@@ -11,4 +11,6 @@ export interface ICarService {
   getCarsByColorId(colorId: number): Observable<ListResponseModel<Car>>;
   getAllCarDetails(): Observable<ListResponseModel<CarDetail>>;
   getCarDetailsById(id: number): Observable<SingleResponseModel<CarDetail>>;
+  getAllCarDetailsByBrandId(brandId: number): Observable<ListResponseModel<CarDetail>>;
+  getAllCarDetailsByColorId(colorId: number): Observable<ListResponseModel<CarDetail>>;
 }

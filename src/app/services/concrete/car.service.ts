@@ -46,13 +46,13 @@ export class CarService implements ICarService {
     return this.httpClient.get<ListResponseModel<CarDetail>>(path);
   }
 
-  GetAllCarDetailsByBrandId(brandId: number): Observable<ListResponseModel<CarDetail>> {
-    const path = this.baseUrl + "getcardetailsbybrandid?brandid=" + brandId;
+  getAllCarDetailsByBrandId(brandId: number): Observable<ListResponseModel<CarDetail>> {
+    const path = this.baseUrl + "getallcardetailsbybrandid?brandid=" + brandId;
     return this.httpClient.get<ListResponseModel<CarDetail>>(path);
   }
 
-  GetAllCarDetailsByColorId(colorId: number): Observable<ListResponseModel<CarDetail>> {
-    const path = this.baseUrl + "getcardetailsbycolorid?colorid=" + colorId;
+  getAllCarDetailsByColorId(colorId: number): Observable<ListResponseModel<CarDetail>> {
+    const path = this.baseUrl + "getallcardetailsbycolorid?colorid=" + colorId;
     return this.httpClient.get<ListResponseModel<CarDetail>>(path);
   }
 }

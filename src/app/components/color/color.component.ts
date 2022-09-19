@@ -11,6 +11,9 @@ export class ColorComponent implements OnInit {
 
   colors: Color[] = [];
   currentColor: Color;
+  filterText: string;
+  viewAllColor: boolean = true;
+  viewCurrentColor: boolean = false;
 
   constructor(private colorService: ColorService) { }
 
@@ -28,8 +31,24 @@ export class ColorComponent implements OnInit {
     this.currentColor = color;
   }
 
+  setViewCurrentColor() {
+    this.viewCurrentColor = true;
+  }
+
+  abortViewCurrentColor() {
+    this.viewCurrentColor = false;
+  }
+
+  setViewAllColor() {
+    this.viewAllColor = true;
+  }
+
+  abortViewAllColor() {
+    this.viewAllColor = false;
+  }
+
   getCurrentColorClass(color: Color) {
-    if (color == this.currentColor) {
+    if (color == this.currentColor && this.viewCurrentColor) {
       return "list-group-item active";
     } else {
       return "list-group-item";
@@ -37,10 +56,10 @@ export class ColorComponent implements OnInit {
   }
 
   getAllColorClass() {
-    if (!this.currentColor) {
-      return "list-group-item active";
+    if (this.viewAllColor) {
+      return "list-group-item list-group-item-action active";
     } else {
-      return "list-group-item";
+      return "list-group-item list-group-item-action";
     }
   }
 

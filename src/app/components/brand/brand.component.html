@@ -1,13 +1,13 @@
 <div class="mb-3">
-  <label for="filterText" class="form-label">Ürün ara</label>
-  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+  <input type="text" [(ngModel)]="filterText" class="form-control" placeholder="search for brand name">
 </div>
-<div *ngIf="filterText" class="alert alert-success">
-  {{filterText}} aradınız.
-</div>
-<ul class="list-group mb-5">
-  <a [class]="getAllBrandClass()" routerLink="/cars">All brands</a>
-  <a (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.id}}" *ngFor="let brand of brands"
-    [class]="getCurrentBrandClass(brand)">
+<ul class="list-group mb-3">
+  <a *ngIf="!filterText" (click)="abortViewCurrentBrand(); setViewAllBrand()" [class]="getAllBrandClass()"
+    routerLink="/cars">All brands</a>
+  <a (click)="abortViewAllBrand(); setViewCurrentBrand(); setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.id}}"
+    *ngFor="let brand of brands | brandFilterPipe: filterText" [class]="getCurrentBrandClass(brand)">
     {{brand.name}}</a>
 </ul>
+<div *ngIf="filterText" class="alert alert-success mb-3">
+  {{filterText}} aradınız.
+</div>

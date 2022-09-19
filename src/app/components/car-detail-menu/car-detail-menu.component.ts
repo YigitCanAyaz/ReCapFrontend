@@ -11,7 +11,11 @@ import { ActivatedRoute } from '@angular/router';
 export class CarDetailMenuComponent implements OnInit {
 
   carDetails: CarDetail[] = [];
+  currentCarDetail: CarDetail;
   imageUrl = "https://localhost:44343"
+  filterText: string;
+  viewAllCarDetail: boolean = true;
+  viewCurrentCarDetail: boolean = false;
 
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
 
@@ -33,14 +37,14 @@ export class CarDetailMenuComponent implements OnInit {
     })
   }
 
-  getAllCarDetailsByBrandId(brandId: number): void {
-    this.carService.getAllCarDetailsByBrandId(brandId).subscribe(result => {
+  getAllCarDetailsByBrandId(cardetailId: number): void {
+    this.carService.getAllCarDetailsByBrandId(cardetailId).subscribe(result => {
       this.carDetails = result.data;
     })
   }
 
   getAllCarDetailsByColorId(colorId: number): void {
-    this.carService.getAllCarDetailsByBrandId(colorId).subscribe(result => {
+    this.carService.getAllCarDetailsByColorId(colorId).subscribe(result => {
       this.carDetails = result.data;
     })
   }
@@ -53,6 +57,42 @@ export class CarDetailMenuComponent implements OnInit {
     else {
       const path = this.imageUrl + carDetail.imagePath;
       return path;
+    }
+  }
+
+  setCurrentCarDetail(cardetail: CarDetail): void {
+    this.currentCarDetail = cardetail;
+  }
+
+  setViewCurrentCarDetail() {
+    this.viewCurrentCarDetail = true;
+  }
+
+  abortViewCurrentCarDetail() {
+    this.viewCurrentCarDetail = false;
+  }
+
+  setViewAllCarDetail() {
+    this.viewAllCarDetail = true;
+  }
+
+  abortViewAllCarDetail() {
+    this.viewAllCarDetail = false;
+  }
+
+  getCurrentCarDetailClass(carDetail: CarDetail) {
+    if (carDetail == this.currentCarDetail && this.viewCurrentCarDetail) {
+      return "list-group-item active";
+    } else {
+      return "list-group-item";
+    }
+  }
+
+  getAllCarDetailClass() {
+    if (this.viewAllCarDetail) {
+      return "list-group-item list-group-item-action active";
+    } else {
+      return "list-group-item list-group-item-action";
     }
   }
 }

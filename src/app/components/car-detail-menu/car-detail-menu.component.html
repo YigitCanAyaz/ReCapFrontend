@@ -1,5 +1,8 @@
+<div class="mb-3">
+  <input type="text" [(ngModel)]="filterText" class="form-control" placeholder="search for model name">
+</div>
 <div class="row">
-  <div class="col-md-3" *ngFor="let carDetail of carDetails">
+  <div class="col-md-3" *ngFor="let carDetail of carDetails | carDetailFilterPipe: filterText">
     <div class="card">
       <img [src]="getCarImage(carDetail)" class="card-img-top" alt="{{carDetail.modelName}}-image"
         style="height: 20vh;">

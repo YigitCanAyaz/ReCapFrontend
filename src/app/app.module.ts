@@ -15,7 +15,8 @@ import { CarDetailMenuComponent } from './components/car-detail-menu/car-detail-
 import { CarDetailPageComponent } from './components/car-detail-page/car-detail-page.component';
 import { BrandFilterPipePipe } from './pipes/brand-filter-pipe.pipe';
 import { ColorFilterPipePipe } from './pipes/color-filter-pipe.pipe';
-import { ModelFilterPipePipe } from './pipes/model-filter-pipe.pipe';
+import { CarDetailFilterPipePipe } from './pipes/car-detail-filter-pipe.pipe';
+import { CarDetailFilterComponent } from './components/car-detail-filter/car-detail-filter.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ModelFilterPipePipe } from './pipes/model-filter-pipe.pipe';
     CarDetailPageComponent,
     BrandFilterPipePipe,
     ColorFilterPipePipe,
-    ModelFilterPipePipe
+    CarDetailFilterPipePipe,
+    CarDetailFilterComponent
   ],
   imports: [
     BrowserModule,

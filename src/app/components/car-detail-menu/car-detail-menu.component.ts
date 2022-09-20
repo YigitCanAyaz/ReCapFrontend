@@ -1,23 +1,27 @@
 import { CarDetail } from 'src/app/models/details/carDetail';
 import { CarService } from './../../services/concrete/car.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FilterTexts } from 'src/app/models/statics/filterTexts';
 
 @Component({
   selector: 'app-car-detail-menu',
   templateUrl: './car-detail-menu.component.html',
   styleUrls: ['./car-detail-menu.component.css']
 })
-export class CarDetailMenuComponent implements OnInit {
+export class CarDetailMenuComponent implements OnInit, OnChanges {
 
   carDetails: CarDetail[] = [];
-  currentCarDetail: CarDetail;
-  imageUrl = "https://localhost:44343"
-  filterText: string;
-  viewAllCarDetail: boolean = true;
-  viewCurrentCarDetail: boolean = false;
+
+  filterText: string = "";
+
+  imageUrl = "https://localhost:44343";
 
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -57,42 +61,6 @@ export class CarDetailMenuComponent implements OnInit {
     else {
       const path = this.imageUrl + carDetail.imagePath;
       return path;
-    }
-  }
-
-  setCurrentCarDetail(cardetail: CarDetail): void {
-    this.currentCarDetail = cardetail;
-  }
-
-  setViewCurrentCarDetail() {
-    this.viewCurrentCarDetail = true;
-  }
-
-  abortViewCurrentCarDetail() {
-    this.viewCurrentCarDetail = false;
-  }
-
-  setViewAllCarDetail() {
-    this.viewAllCarDetail = true;
-  }
-
-  abortViewAllCarDetail() {
-    this.viewAllCarDetail = false;
-  }
-
-  getCurrentCarDetailClass(carDetail: CarDetail) {
-    if (carDetail == this.currentCarDetail && this.viewCurrentCarDetail) {
-      return "list-group-item active";
-    } else {
-      return "list-group-item";
-    }
-  }
-
-  getAllCarDetailClass() {
-    if (this.viewAllCarDetail) {
-      return "list-group-item list-group-item-action active";
-    } else {
-      return "list-group-item list-group-item-action";
     }
   }
 }

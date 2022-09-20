@@ -13,6 +13,7 @@ import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 export class CarService implements ICarService {
 
   baseUrl: string = 'https://localhost:44343/api/cars/';
+  carDetailModelFilter: string = "";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -55,4 +56,5 @@ export class CarService implements ICarService {
     const path = this.baseUrl + "getallcardetailsbycolorid?colorid=" + colorId;
     return this.httpClient.get<ListResponseModel<CarDetail>>(path);
   }
+
 }

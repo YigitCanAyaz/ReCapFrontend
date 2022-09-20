@@ -2,7 +2,6 @@ import { CarDetail } from 'src/app/models/details/carDetail';
 import { CarService } from './../../services/concrete/car.service';
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FilterTexts } from 'src/app/models/statics/filterTexts';
 
 @Component({
   selector: 'app-car-detail-menu',

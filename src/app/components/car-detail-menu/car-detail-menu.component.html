@@ -1,4 +1,7 @@
-<app-car-detail-model-filter></app-car-detail-model-filter>
+<app-car-detail-filter></app-car-detail-filter>
+<div class="mb-3">
+  <input type="text" class="form-control" [(ngModel)]="filterText" placeholder="search for model name">
+</div>
 <div class="row">
   <div class="col-md-3" *ngFor="let carDetail of carDetails | carDetailModelFilterPipe: filterText">
     <div class="card">
@@ -13,7 +16,7 @@
         <li class="list-group-item"><b>Daily Price:</b> {{carDetail.dailyPrice | currency}}</li>
       </ul>
       <div class="card-body text-center">
-        <a href="#" class="btn btn-outline-secondary" routerLink="/cars/car-detail-page/{{carDetail.id}}">Detaya Git</a>
+        <a class="btn btn-outline-secondary">Detaya Git</a>
       </div>
     </div>
     <br>

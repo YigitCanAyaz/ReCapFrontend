@@ -1,0 +1,24 @@
+<form class="row mb-3">
+  <div class="col-md-4 col-lg-5">
+    <select class="form-select" [(ngModel)]="selectedBrandId">
+      <option [ngValue]="undefined" disabled selected>
+        Choose a Brand
+      </option>
+      <option [ngValue]="brand.id" *ngFor="let brand of brands">{{brand.name}}</option>
+    </select>
+  </div>
+  <div class="col-md-4 col-lg-5">
+    <select class="form-select" [(ngModel)]="selectedColorId">
+      <option [ngValue]="undefined" disabled selected>
+        Choose a Color
+      </option>
+      <option [ngValue]="color.id" *ngFor="let color of colors">{{color.name}}</option>
+    </select>
+  </div>
+  <div class="col-md-2 col-lg-1">
+    <button routerLink="/cars/filter/{{selectedBrandId}}/{{selectedColorId}}" class="btn btn-primary">Filter</button>
+  </div>
+  <div class="col-md-2 col-lg-1">
+    <button type="submit" class="btn btn-danger">Reset</button>
+  </div>
+</form>

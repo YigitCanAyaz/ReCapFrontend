@@ -1,24 +1,32 @@
-<form class="row mb-3">
-  <div class="col-md-4 col-lg-5">
+<div class="row mb-3">
+  <div class="col-2">
     <select class="form-select" [(ngModel)]="selectedBrandId">
       <option [ngValue]="undefined" disabled selected>
         Choose a Brand
       </option>
-      <option [ngValue]="brand.id" *ngFor="let brand of brands">{{brand.name}}</option>
+      <option [ngValue]="brand.id" *ngFor="let brand of brands" [selected]="selectedBrandId > 1? true : null">
+        {{brand.name}}
+      </option>
     </select>
   </div>
-  <div class="col-md-4 col-lg-5">
+  <div class="col-2">
     <select class="form-select" [(ngModel)]="selectedColorId">
-      <option [ngValue]="undefined" disabled selected>
+      <option [ngValue]="0" disabled selected>
         Choose a Color
       </option>
       <option [ngValue]="color.id" *ngFor="let color of colors">{{color.name}}</option>
     </select>
   </div>
-  <div class="col-md-2 col-lg-1">
-    <button routerLink="/cars/filter/{{selectedBrandId}}/{{selectedColorId}}" class="btn btn-primary">Filter</button>
+  <div class="col-3">
+    <input type="text" class="form-control" [(ngModel)]="minDailyPrice" placeholder="Minimum Daily Price">
   </div>
-  <div class="col-md-2 col-lg-1">
+  <div class="col-3">
+    <input type="text" class="form-control" [(ngModel)]="maxDailyPrice" placeholder="Maximum Daily Price">
+  </div>
+  <div class="col-1">
+    <button (click)="filter()" class="btn btn-primary">Filter</button>
+  </div>
+  <div class="col-1">
     <button type="submit" class="btn btn-danger">Reset</button>
   </div>
-</form>
+</div>

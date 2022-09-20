@@ -13,4 +13,5 @@ export interface ICarService {
   getCarDetailsById(id: number): Observable<SingleResponseModel<CarDetail>>;
   getAllCarDetailsByBrandId(brandId: number): Observable<ListResponseModel<CarDetail>>;
   getAllCarDetailsByColorId(colorId: number): Observable<ListResponseModel<CarDetail>>;
+  getAllCarDetailsByBrandIdColorIdMinDailyPriceMaxDailyPrice(brandId: number, colorId: number, minDailyPrice: number, maxDailyPrice: number): Observable<ListResponseModel<CarDetail>>;
 }

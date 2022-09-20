@@ -9,7 +9,10 @@ const routes: Routes = [
   { path: 'cars/car-detail-page/:id', component: CarDetailPageComponent },
   { path: 'cars/brand/:brandId', component: CarDetailMenuComponent },
   { path: 'cars/color/:colorId', component: CarDetailMenuComponent },
-  { path: 'cars/filter/:brandId/:colorId', component: CarDetailMenuComponent }
+  { path: 'cars/filter/brandId/:brandId/colorId/:colorId/minDailyPrice/:minDailyPrice/maxDailyPrice/:maxDailyPrice', component: CarDetailMenuComponent },
+  { path: 'cars/filter/colorId=:colorId/minDailyPrice=:minDailyPrice/maxDailyPrice=:maxDailyPrice', component: CarDetailMenuComponent },
+  { path: 'cars/filter/minDailyPrice=:minDailyPrice/maxDailyPrice=:maxDailyPrice', component: CarDetailMenuComponent },
+  { path: 'maxDailyPrice=:maxDailyPrice', component: CarDetailMenuComponent },
 ];
 
 @NgModule({

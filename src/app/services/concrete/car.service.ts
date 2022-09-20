@@ -57,4 +57,11 @@ export class CarService implements ICarService {
     return this.httpClient.get<ListResponseModel<CarDetail>>(path);
   }
 
+  getAllCarDetailsByBrandIdColorIdMinDailyPriceMaxDailyPrice(brandId: number, colorId: number, minDailyPrice: number, maxDailyPrice: number): Observable<ListResponseModel<CarDetail>> {
+
+    const path = this.baseUrl + "getallcardetailsbybrandidcoloridmindailypricemaxdailyprice?" + "brandid=" + brandId + "&colorid=" + colorId + "&mindailyprice=" + minDailyPrice + "&maxdailyprice=" + maxDailyPrice;
+
+    return this.httpClient.get<ListResponseModel<CarDetail>>(path);
+  }
+
 }

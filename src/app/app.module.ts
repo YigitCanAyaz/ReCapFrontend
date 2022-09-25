@@ -20,6 +20,7 @@ import { CarDetailModelFilterPipePipe } from './pipes/car-detail-model-filter-pi
 import { CarDetailFilterComponent } from './components/car-detail-filter/car-detail-filter.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { RentalDetailHistoryComponent } from './components/rental-detail-history/rental-detail-history.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ToastrModule } from 'ngx-toastr';
     ColorFilterPipePipe,
     CarDetailModelFilterPipePipe,
     CarDetailFilterComponent,
+    RentalDetailHistoryComponent,
   ],
   imports: [
     BrowserModule,

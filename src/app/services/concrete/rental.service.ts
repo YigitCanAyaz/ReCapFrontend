@@ -37,4 +37,14 @@ export class RentalService implements IRentalService {
     return this.httpClient.get<ListResponseModel<RentalDetail>>(path);
   }
 
+  getAllRentalDetailsByCarId(carId: number): Observable<ListResponseModel<RentalDetail>> {
+    const path = this.baseUrl + "getallrentaldetailsbycarid?carid=" + carId;
+    return this.httpClient.get<ListResponseModel<RentalDetail>>(path);
+  }
+
+  getAllRentalDetailsByCustomerId(customerId: number): Observable<ListResponseModel<RentalDetail>> {
+    const path = this.baseUrl + "getallrentaldetailsbycustomerid?customerid=" + customerId;
+    return this.httpClient.get<ListResponseModel<RentalDetail>>(path);
+  }
+
 }

@@ -11,10 +11,12 @@
   </div>
   <div class="col-2">
     <select class="form-select" [(ngModel)]="selectedColorId">
-      <option [ngValue]="0" disabled selected>
+      <option [ngValue]="undefined" disabled selected>
         Choose a Color
       </option>
-      <option [ngValue]="color.id" *ngFor="let color of colors">{{color.name}}</option>
+      <option [ngValue]="color.id" *ngFor="let color of colors" [selected]="selectedColorId > 1? true : null">
+        {{color.name}}
+      </option>
     </select>
   </div>
   <div class="col-3">

@@ -1,5 +1,5 @@
-import { ColorService } from './../../services/concrete/color.service';
-import { BrandService } from './../../services/concrete/brand.service';
+import { ColorService } from '../../../services/concrete/color.service';
+import { BrandService } from '../../../services/concrete/brand.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/entities/brand';
 import { Color } from 'src/app/models/entities/color';

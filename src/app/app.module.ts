@@ -6,24 +6,32 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrandComponent } from './components/brand/brand.component';
-import { CarComponent } from './components/car/car.component';
-import { ColorComponent } from './components/color/color.component';
-import { CustomerComponent } from './components/customer/customer.component';
-import { ModelComponent } from './components/model/model.component';
-import { RentalComponent } from './components/rental/rental.component';
-import { CarDetailMenuComponent } from './components/car-detail-menu/car-detail-menu.component';
-import { CarDetailPageComponent } from './components/car-detail-page/car-detail-page.component';
+import { BrandComponent } from './components/site/brand/brand.component';
+import { CarComponent } from './components/site/car/car.component';
+import { ColorComponent } from './components/site/color/color.component';
+import { CustomerComponent } from './components/site/customer/customer.component';
+import { ModelComponent } from './components/site/model/model.component';
+import { RentalComponent } from './components/site/rental/rental.component';
+import { CarDetailMenuComponent } from './components/site/car-detail-menu/car-detail-menu.component';
+import { CarDetailPageComponent } from './components/site/car-detail-page/car-detail-page.component';
 import { BrandFilterPipePipe } from './pipes/brand-filter-pipe.pipe';
 import { ColorFilterPipePipe } from './pipes/color-filter-pipe.pipe';
 import { CarDetailModelFilterPipePipe } from './pipes/car-detail-model-filter-pipe.pipe';
-import { CarDetailFilterComponent } from './components/car-detail-filter/car-detail-filter.component';
+import { CarDetailFilterComponent } from './components/site/car-detail-filter/car-detail-filter.component';
 
 import { ToastrModule } from 'ngx-toastr';
-import { RentalDetailHistoryComponent } from './components/rental-detail-history/rental-detail-history.component';
+import { RentalDetailHistoryComponent } from './components/site/rental-detail-history/rental-detail-history.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SiteLayoutComponent } from './components/site/site-layout/site-layout.component';
+import { AdminLayoutComponent } from './components/admin/admin-layout/admin-layout.component';
+import { CarListComponent } from './components/admin/car-list/car-list.component';
+import { BrandListComponent } from './components/admin/brand-list/brand-list.component';
+import { ColorListComponent } from './components/admin/color-list/color-list.component';
+import { CustomerListComponent } from './components/admin/customer-list/customer-list.component';
+import { ModelListComponent } from './components/admin/model-list/model-list.component';
+import { RentalListComponent } from './components/admin/rental-list/rental-list.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +51,14 @@ import { RegisterComponent } from './components/register/register.component';
     RentalDetailHistoryComponent,
     LoginComponent,
     RegisterComponent,
+    SiteLayoutComponent,
+    AdminLayoutComponent,
+    CarListComponent,
+    BrandListComponent,
+    ColorListComponent,
+    CustomerListComponent,
+    ModelListComponent,
+    RentalListComponent
   ],
   imports: [
     BrowserModule,

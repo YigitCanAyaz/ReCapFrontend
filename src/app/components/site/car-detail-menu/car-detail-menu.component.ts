@@ -1,5 +1,5 @@
 import { CarDetail } from 'src/app/models/details/carDetail';
-import { CarService } from './../../services/concrete/car.service';
+import { CarService } from '../../../services/concrete/car.service';
 import { Component, OnInit, } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 

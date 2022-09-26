@@ -1,4 +1,4 @@
-import { ColorService } from './../../services/concrete/color.service';
+import { ColorService } from '../../../services/concrete/color.service';
 import { Component, OnInit } from '@angular/core';
 import { Color } from 'src/app/models/entities/color';
 

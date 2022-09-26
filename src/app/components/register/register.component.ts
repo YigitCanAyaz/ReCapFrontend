@@ -1,5 +1,6 @@
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/concrete/auth.service';
-import { MustMatchValidator } from './../../providers/mustMatchValidator';
+import { MustMatchValidator } from '../../providers/mustMatchValidator';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private toastrService: ToastrService, private authService: AuthService) { }
+  constructor(private formBuilder: FormBuilder, private toastrService: ToastrService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.createRegisterForm();
@@ -25,23 +26,20 @@ export class RegisterComponent implements OnInit {
       lastName: ["", [Validators.required]],
       email: ["", [Validators.required, Validators.email]],
       password: ["", [Validators.required, Validators.minLength(5)]],
-      // confirmPassword: ["", [Validators.required]],
-    }
-    );
+    });
   }
 
   get firstName() { return this.registerForm.get('firstName') }
-  get lastName() { return this.registerForm.get('firstName') }
-  get email() { return this.registerForm.get('firstName') }
-  get password() { return this.registerForm.get('firstName') }
+  get lastName() { return this.registerForm.get('lastName') }
+  get email() { return this.registerForm.get('email') }
+  get password() { return this.registerForm.get('password') }
   // get confirmPassword() { return this.registerForm.get('firstName') }
 
   register(): void {
-    console.log(10);
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value).subscribe(response => {
-        this.toastrService.info(response.message);
-        localStorage.setItem("token", response.data.token);
+        this.toastrService.info("Başarıyla kullanıcı oluşturuldu, giriş sayfasına yönlendiriliyorsunuz...");
+        this.router.navigate(["/login"])
       }, responseError => {
         this.toastrService.error(responseError.error);
       });

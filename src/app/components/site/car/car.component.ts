@@ -1,5 +1,5 @@
-import { CarDetail } from './../../models/details/carDetail';
-import { CarService } from './../../services/concrete/car.service';
+import { CarDetail } from '../../../models/details/carDetail';
+import { CarService } from '../../../services/concrete/car.service';
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/entities/car';
 

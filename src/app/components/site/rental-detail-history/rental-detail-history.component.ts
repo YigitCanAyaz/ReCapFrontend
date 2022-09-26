@@ -1,5 +1,5 @@
 import { RentalService } from 'src/app/services/concrete/rental.service';
-import { RentalDetail } from './../../models/details/rentalDetail';
+import { RentalDetail } from '../../../models/details/rentalDetail';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({

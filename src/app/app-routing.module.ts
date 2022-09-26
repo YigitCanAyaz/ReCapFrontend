@@ -1,7 +1,9 @@
+import { LoginComponent } from './components/login/login.component';
 import { CarDetailPageComponent } from './components/car-detail-page/car-detail-page.component';
 import { CarDetailMenuComponent } from './components/car-detail-menu/car-detail-menu.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", component: CarDetailMenuComponent },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'cars/filter/colorId=:colorId/minDailyPrice=:minDailyPrice/maxDailyPrice=:maxDailyPrice', component: CarDetailMenuComponent },
   { path: 'cars/filter/minDailyPrice=:minDailyPrice/maxDailyPrice=:maxDailyPrice', component: CarDetailMenuComponent },
   { path: 'maxDailyPrice=:maxDailyPrice', component: CarDetailMenuComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({

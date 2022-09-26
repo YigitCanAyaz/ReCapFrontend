@@ -1,9 +1,10 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginModel } from 'src/app/models/custom/loginModel';
+import { LoginModel } from 'src/app/models/details/loginModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
-import { TokenModel } from 'src/app/models/custom/tokenModel';
+import { TokenModel } from 'src/app/models/details/tokenModel';
+import { RegisterModel } from 'src/app/models/details/registerModel';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,10 @@ export class AuthService {
 
   login(loginModel: LoginModel): Observable<SingleResponseModel<TokenModel>> {
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + "login", loginModel);
+  }
+
+  register(registerModel: RegisterModel): Observable<SingleResponseModel<TokenModel>> {
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + "register", registerModel);
   }
 
   isAuthenticated() {

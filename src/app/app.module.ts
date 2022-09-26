@@ -22,6 +22,8 @@ import { CarDetailFilterComponent } from './components/car-detail-filter/car-det
 import { ToastrModule } from 'ngx-toastr';
 import { RentalDetailHistoryComponent } from './components/rental-detail-history/rental-detail-history.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     CarDetailModelFilterPipePipe,
     CarDetailFilterComponent,
     RentalDetailHistoryComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

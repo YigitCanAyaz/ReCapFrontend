@@ -5,6 +5,7 @@ import { CarDetailMenuComponent } from './components/site/car-detail-menu/car-de
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './components/register/register.component';
+import { AdminLayoutComponent } from './components/admin/admin-layout/admin-layout.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,7 +21,13 @@ const routes: Routes = [
       { path: 'cars/color/:colorId', component: CarDetailMenuComponent },
       { path: 'cars/filter/brandId/:brandId/colorId/:colorId/minDailyPrice/:minDailyPrice/maxDailyPrice/:maxDailyPrice', component: CarDetailMenuComponent },
     ]
-  }
+  },
+  {
+    path: 'admin',
+    component: AdminLayoutComponent,
+    children: [
+    ]
+  },
 ];
 
 @NgModule({

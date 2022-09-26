@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<div class="row mt-5">
+  <div class="col-md-2">
+    <ul class="list-group">
+      <a class="list-group-item" routerLink="/brands/list">Brands</a>
+      <a class="list-group-item" routerLink="/cars/list">Cars</a>
+      <a class="list-group-item" routerLink="/colors/list">Colors</a>
+      <a class="list-group-item" routerLink="/customers/list">Customers</a>
+      <a class="list-group-item" routerLink="/models/list">Models</a>
+      <a class="list-group-item" routerLink="/rentals/list">Rentals</a>
+    </ul>
+  </div>
+  <div class="col-md-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>

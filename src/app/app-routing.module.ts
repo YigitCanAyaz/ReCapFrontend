@@ -6,6 +6,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './components/register/register.component';
 import { AdminLayoutComponent } from './components/admin/admin-layout/admin-layout.component';
+import { BrandListComponent } from './components/admin/brand/brand-list/brand-list.component';
+import { CarListComponent } from './components/admin/car/car-list/car-list.component';
+import { ColorListComponent } from './components/admin/color/color-list/color-list.component';
+import { CustomerListComponent } from './components/admin/customer/customer-list/customer-list.component';
+import { ModelListComponent } from './components/admin/model/model-list/model-list.component';
+import { RentalListComponent } from './components/admin/rental/rental-list/rental-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -26,6 +32,12 @@ const routes: Routes = [
     path: 'admin',
     component: AdminLayoutComponent,
     children: [
+      { path: "brands/list", component: BrandListComponent },
+      { path: "cars/list", component: CarListComponent },
+      { path: "colors/list", component: ColorListComponent },
+      { path: "customers/list", component: CustomerListComponent },
+      { path: "models/list", component: ModelListComponent },
+      { path: "rentals/list", component: RentalListComponent },
     ]
   },
 ];

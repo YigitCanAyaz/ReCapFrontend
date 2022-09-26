@@ -1,3 +1,5 @@
+import { AuthService } from 'src/app/services/concrete/auth.service';
+import { MustMatchValidator } from './../../providers/mustMatchValidator';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
@@ -10,11 +12,11 @@ import { ToastrService } from 'ngx-toastr';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  submitted: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private toastrService: ToastrService) { }
+  constructor(private formBuilder: FormBuilder, private toastrService: ToastrService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.createRegisterForm();
   }
 
   createRegisterForm(): void {
@@ -23,14 +25,26 @@ export class RegisterComponent implements OnInit {
       lastName: ["", [Validators.required]],
       email: ["", [Validators.required, Validators.email]],
       password: ["", [Validators.required, Validators.minLength(5)]],
-      confirmPassword: ["", [Validators.pattern]],
-    });
+      // confirmPassword: ["", [Validators.required]],
+    }
+    );
   }
 
-  register(): void {
-    this.submitted = true;
-    if (this.registerForm.valid) {
+  get firstName() { return this.registerForm.get('firstName') }
+  get lastName() { return this.registerForm.get('firstName') }
+  get email() { return this.registerForm.get('firstName') }
+  get password() { return this.registerForm.get('firstName') }
+  // get confirmPassword() { return this.registerForm.get('firstName') }
 
+  register(): void {
+    console.log(10);
+    if (this.registerForm.valid) {
+      this.authService.register(this.registerForm.value).subscribe(response => {
+        this.toastrService.info(response.message);
+        localStorage.setItem("token", response.data.token);
+      }, responseError => {
+        this.toastrService.error(responseError.error);
+      });
     }
   }
 

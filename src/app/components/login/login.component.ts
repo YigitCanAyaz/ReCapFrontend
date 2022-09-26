@@ -12,7 +12,6 @@ import { AuthService } from 'src/app/services/concrete/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  checkInput: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private toastrService: ToastrService, private router: Router) { }
 
@@ -28,7 +27,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.checkInput = true;
 
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
@@ -46,7 +44,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  register(): void {
+  redirectToRegister(): void {
     this.router.navigate(["register"])
   }
 

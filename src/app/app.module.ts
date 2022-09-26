@@ -26,12 +26,12 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SiteLayoutComponent } from './components/site/site-layout/site-layout.component';
 import { AdminLayoutComponent } from './components/admin/admin-layout/admin-layout.component';
-import { CarListComponent } from './components/admin/car-list/car-list.component';
-import { BrandListComponent } from './components/admin/brand-list/brand-list.component';
-import { ColorListComponent } from './components/admin/color-list/color-list.component';
-import { CustomerListComponent } from './components/admin/customer-list/customer-list.component';
-import { ModelListComponent } from './components/admin/model-list/model-list.component';
-import { RentalListComponent } from './components/admin/rental-list/rental-list.component';
+import { CarListComponent } from './components/admin/car/car-list/car-list.component';
+import { BrandListComponent } from './components/admin/brand/brand-list/brand-list.component';
+import { ColorListComponent } from './components/admin/color/color-list/color-list.component';
+import { CustomerListComponent } from './components/admin/customer/customer-list/customer-list.component';
+import { ModelListComponent } from './components/admin/model/model-list/model-list.component';
+import { RentalListComponent } from './components/admin/rental/rental-list/rental-list.component';
 
 @NgModule({
   declarations: [

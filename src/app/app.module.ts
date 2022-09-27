@@ -48,6 +48,14 @@ import { CustomerAddComponent } from './components/admin/customer/customer-add/c
 import { CustomerViewComponent } from './components/admin/customer/customer-view/customer-view.component';
 import { CustomerRemoveComponent } from './components/admin/customer/customer-remove/customer-remove.component';
 import { CustomerUpdateComponent } from './components/admin/customer/customer-update/customer-update.component';
+import { ModelAddComponent } from './components/admin/model/model-add/model-add.component';
+import { ModelViewComponent } from './components/admin/model/model-view/model-view.component';
+import { ModelRemoveComponent } from './components/admin/model/model-remove/model-remove.component';
+import { ModelUpdateComponent } from './components/admin/model/model-update/model-update.component';
+import { RentalAddComponent } from './components/admin/rental/rental-add/rental-add.component';
+import { RentalUpdateComponent } from './components/admin/rental/rental-update/rental-update.component';
+import { RentalViewComponent } from './components/admin/rental/rental-view/rental-view.component';
+import { RentalRemoveComponent } from './components/admin/rental/rental-remove/rental-remove.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +98,15 @@ import { CustomerUpdateComponent } from './components/admin/customer/customer-up
     CustomerAddComponent,
     CustomerViewComponent,
     CustomerRemoveComponent,
-    CustomerUpdateComponent
+    CustomerUpdateComponent,
+    ModelAddComponent,
+    ModelViewComponent,
+    ModelRemoveComponent,
+    ModelUpdateComponent,
+    RentalAddComponent,
+    RentalUpdateComponent,
+    RentalViewComponent,
+    RentalRemoveComponent
   ],
   imports: [
     BrowserModule,

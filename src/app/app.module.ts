@@ -32,6 +32,14 @@ import { ColorListComponent } from './components/admin/color/color-list/color-li
 import { CustomerListComponent } from './components/admin/customer/customer-list/customer-list.component';
 import { ModelListComponent } from './components/admin/model/model-list/model-list.component';
 import { RentalListComponent } from './components/admin/rental/rental-list/rental-list.component';
+import { BrandAddComponent } from './components/admin/brand/brand-add/brand-add.component';
+import { BrandViewComponent } from './components/admin/brand/brand-view/brand-view.component';
+import { BrandUpdateComponent } from './components/admin/brand/brand-update/brand-update.component';
+import { BrandRemoveComponent } from './components/admin/brand/brand-remove/brand-remove.component';
+import { CarAddComponent } from './components/admin/car/car-add/car-add.component';
+import { CarRemoveComponent } from './components/admin/car/car-remove/car-remove.component';
+import { CarUpdateComponent } from './components/admin/car/car-update/car-update.component';
+import { CarViewComponent } from './components/admin/car/car-view/car-view.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +66,15 @@ import { RentalListComponent } from './components/admin/rental/rental-list/renta
     ColorListComponent,
     CustomerListComponent,
     ModelListComponent,
-    RentalListComponent
+    RentalListComponent,
+    BrandAddComponent,
+    BrandViewComponent,
+    BrandUpdateComponent,
+    BrandRemoveComponent,
+    CarAddComponent,
+    CarRemoveComponent,
+    CarUpdateComponent,
+    CarViewComponent
   ],
   imports: [
     BrowserModule,

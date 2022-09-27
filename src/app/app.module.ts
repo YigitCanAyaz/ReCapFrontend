@@ -40,6 +40,14 @@ import { CarAddComponent } from './components/admin/car/car-add/car-add.componen
 import { CarRemoveComponent } from './components/admin/car/car-remove/car-remove.component';
 import { CarUpdateComponent } from './components/admin/car/car-update/car-update.component';
 import { CarViewComponent } from './components/admin/car/car-view/car-view.component';
+import { ColorAddComponent } from './components/admin/color/color-add/color-add.component';
+import { ColorViewComponent } from './components/admin/color/color-view/color-view.component';
+import { ColorRemoveComponent } from './components/admin/color/color-remove/color-remove.component';
+import { ColorUpdateComponent } from './components/admin/color/color-update/color-update.component';
+import { CustomerAddComponent } from './components/admin/customer/customer-add/customer-add.component';
+import { CustomerViewComponent } from './components/admin/customer/customer-view/customer-view.component';
+import { CustomerRemoveComponent } from './components/admin/customer/customer-remove/customer-remove.component';
+import { CustomerUpdateComponent } from './components/admin/customer/customer-update/customer-update.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +82,15 @@ import { CarViewComponent } from './components/admin/car/car-view/car-view.compo
     CarAddComponent,
     CarRemoveComponent,
     CarUpdateComponent,
-    CarViewComponent
+    CarViewComponent,
+    ColorAddComponent,
+    ColorViewComponent,
+    ColorRemoveComponent,
+    ColorUpdateComponent,
+    CustomerAddComponent,
+    CustomerViewComponent,
+    CustomerRemoveComponent,
+    CustomerUpdateComponent
   ],
   imports: [
     BrowserModule,

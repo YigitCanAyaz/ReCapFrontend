@@ -12,8 +12,9 @@ import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 })
 export class CarService implements ICarService {
 
+
   baseUrl: string = 'https://localhost:44343/api/cars/';
-  carDetailModelFilter: string = "";
+  imageUrl = "https://localhost:44343";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -62,6 +63,17 @@ export class CarService implements ICarService {
     const path = this.baseUrl + "getallcardetailsbybrandidcoloridmindailypricemaxdailyprice?" + "brandid=" + brandId + "&colorid=" + colorId + "&mindailyprice=" + minDailyPrice + "&maxdailyprice=" + maxDailyPrice;
 
     return this.httpClient.get<ListResponseModel<CarDetail>>(path);
+  }
+
+  getCarImage(carDetail: CarDetail): string {
+    if (carDetail.imagePath.length === 0) {
+      const path = this.imageUrl + "/Images/default.png";
+      return path;
+    }
+    else {
+      const path = this.imageUrl + carDetail.imagePath;
+      return path;
+    }
   }
 
 }

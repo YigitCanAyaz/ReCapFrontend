@@ -1,1 +1,22 @@
-<p>car-view works!</p>
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex">
+      <a class="btn btn-sm me-auto p-2" routerLink="/admin/cars/list"><i class="fa fa-arrow-left fa-lg"></i></a>
+      <a class="btn btn-sm p-2" routerLink="/admin/cars/update/{{carDetail.id}}"><i class="fa fa-pencil fa-lg"></i></a>
+      <a class="btn btn-sm p-2" routerLink="/admin/cars/remove/{{carDetail.id}}"><i class="fa fa-trash fa-lg"
+          aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title text-center mt-2 mb-5">Selected Car Fields:</h5>
+    <p class="card-text"><b>Brand:</b>&emsp;{{carDetail.brandName}}</p>
+    <p class="card-text"><b>Model:</b>&emsp;{{carDetail.modelName}}</p>
+    <p class="card-text"><b>Year:</b>&emsp;{{carDetail.modelYear}}</p>
+    <p class="card-text"><b>Color:</b>&emsp;{{carDetail.colorName}}</p>
+    <p class="card-text"><b>Daily Price:</b>&emsp;{{carDetail.dailyPrice}}</p>
+    <p class="card-text"><b>Description:</b>&emsp;{{carDetail.description}}</p>
+    <p class="card-text"><b>Image:&emsp;</b><br /><img [src]="getCarImage(carDetail)" style="height: 20vh;"
+        class="mt-2" />
+    </p>
+  </div>
+</div>

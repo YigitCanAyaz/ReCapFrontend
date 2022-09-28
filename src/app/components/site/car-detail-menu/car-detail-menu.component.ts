@@ -19,8 +19,6 @@ export class CarDetailMenuComponent implements OnInit {
   minDailyPrice: number;
   maxDailyPrice: number;
 
-  imageUrl = "https://localhost:44343";
-
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -56,14 +54,7 @@ export class CarDetailMenuComponent implements OnInit {
   }
 
   getCarImage(carDetail: CarDetail): string {
-    if (carDetail.imagePath.length === 0) {
-      const path = this.imageUrl + "/Images/default.png";
-      return path;
-    }
-    else {
-      const path = this.imageUrl + carDetail.imagePath;
-      return path;
-    }
+    return this.carService.getCarImage(carDetail);
   }
 
   getAllCarDetailsByBrandIdColorIdMinDailyPriceMaxDailyPrice(brandId: number, colorId: number, minDailyPrice: number, maxDailyPrice: number): void {

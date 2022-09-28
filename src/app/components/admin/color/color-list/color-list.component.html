@@ -1,1 +1,14 @@
-<p>color-list works!</p>
+<table class="table table-striped table-bordered text-center">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let color of colors" (click)="getColorViewById(color.id)">
+      <th scope="row">{{color.id}}</th>
+      <td>{{color.name}}</td>
+    </tr>
+  </tbody>
+</table>

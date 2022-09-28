@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
+import { ColorService } from './../../../../services/concrete/color.service';
 import { Component, OnInit } from '@angular/core';
+import { Color } from 'src/app/models/entities/color';
 
 @Component({
   selector: 'app-color-list',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorListComponent implements OnInit {
 
-  constructor() { }
+  colors: Color[] = [];
+
+  constructor(private colorService: ColorService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getAllColors();
+  }
+
+  getAllColors(): void {
+    this.colorService.getAll().subscribe(result => {
+      this.colors = result.data;
+    })
+  }
+
+  getColorViewById(colorId: number): void {
+    this.router.navigate(["/admin/colors/view/" + colorId]);
   }
 
 }

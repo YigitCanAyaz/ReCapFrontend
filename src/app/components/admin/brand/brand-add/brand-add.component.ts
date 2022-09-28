@@ -1,3 +1,4 @@
+import { BrandService } from './../../../../services/concrete/brand.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrandAddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private brandService: BrandService) { }
 
   ngOnInit(): void {
   }

@@ -35,14 +35,14 @@ export class CarDetailFilterComponent implements OnInit {
   }
 
   getAllBrands(): void {
-    this.brandService.getAll().subscribe(result => {
-      this.brands = result.data;
+    this.brandService.getAll().subscribe(response => {
+      this.brands = response.data;
     })
   }
 
   getAllColors(): void {
-    this.colorService.getAll().subscribe(result => {
-      this.colors = result.data;
+    this.colorService.getAll().subscribe(response => {
+      this.colors = response.data;
     })
   }
 

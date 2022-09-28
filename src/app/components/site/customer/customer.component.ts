@@ -21,15 +21,15 @@ export class CustomerComponent implements OnInit {
   }
 
   getAll(): void {
-    this.customerService.getAll().subscribe(result => {
-      this.customers = result.data;
+    this.customerService.getAll().subscribe(response => {
+      this.customers = response.data;
       this.dataLoaded = true;
     });
   }
 
   getAllCustomerDetails(): void {
-    this.customerService.getAllCustomerDetails().subscribe(result => {
-      this.customerDetails = result.data;
+    this.customerService.getAllCustomerDetails().subscribe(response => {
+      this.customerDetails = response.data;
       this.dataLoaded = true;
     });
   }

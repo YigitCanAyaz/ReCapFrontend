@@ -38,20 +38,20 @@ export class CarDetailMenuComponent implements OnInit {
   }
 
   getAllCarDetails(): void {
-    this.carService.getAllCarDetails().subscribe(result => {
-      this.carDetails = result.data;
+    this.carService.getAllCarDetails().subscribe(response => {
+      this.carDetails = response.data;
     })
   }
 
   getAllCarDetailsByBrandId(cardetailId: number): void {
-    this.carService.getAllCarDetailsByBrandId(cardetailId).subscribe(result => {
-      this.carDetails = result.data;
+    this.carService.getAllCarDetailsByBrandId(cardetailId).subscribe(response => {
+      this.carDetails = response.data;
     })
   }
 
   getAllCarDetailsByColorId(colorId: number): void {
-    this.carService.getAllCarDetailsByColorId(colorId).subscribe(result => {
-      this.carDetails = result.data;
+    this.carService.getAllCarDetailsByColorId(colorId).subscribe(response => {
+      this.carDetails = response.data;
     })
   }
 
@@ -67,12 +67,12 @@ export class CarDetailMenuComponent implements OnInit {
   }
 
   getAllCarDetailsByBrandIdColorIdMinDailyPriceMaxDailyPrice(brandId: number, colorId: number, minDailyPrice: number, maxDailyPrice: number): void {
-    this.carService.getAllCarDetailsByBrandIdColorIdMinDailyPriceMaxDailyPrice(brandId, colorId, minDailyPrice, maxDailyPrice).subscribe(result => {
+    this.carService.getAllCarDetailsByBrandIdColorIdMinDailyPriceMaxDailyPrice(brandId, colorId, minDailyPrice, maxDailyPrice).subscribe(response => {
       this.selectedBrandId = brandId;
       this.selectedColorId = colorId;
       this.minDailyPrice = minDailyPrice;
       this.maxDailyPrice = maxDailyPrice;
-      this.carDetails = result.data;
+      this.carDetails = response.data;
     })
   }
 }

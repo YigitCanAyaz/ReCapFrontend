@@ -21,15 +21,15 @@ export class RentalComponent implements OnInit {
   }
 
   getAll(): void {
-    this.rentalService.getAll().subscribe(result => {
-      this.rentals = result.data;
+    this.rentalService.getAll().subscribe(response => {
+      this.rentals = response.data;
       this.dataLoaded = true;
     });
   }
 
   getAllRentalDetails(): void {
-    this.rentalService.getAllRentalDetails().subscribe(result => {
-      this.rentalDetails = result.data;
+    this.rentalService.getAllRentalDetails().subscribe(response => {
+      this.rentalDetails = response.data;
       this.dataLoaded = true;
     });
   }

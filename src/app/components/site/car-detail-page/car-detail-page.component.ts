@@ -23,8 +23,8 @@ export class CarDetailPageComponent implements OnInit {
   }
 
   getCarDetailsById(id: number): void {
-    this.carService.getCarDetailsById(id).subscribe(result => {
-      this.carDetail = result.data;
+    this.carService.getCarDetailsById(id).subscribe(response => {
+      this.carDetail = response.data;
       this.dataLoaded = true;
     })
   }

@@ -23,8 +23,8 @@ export class RentalDetailHistoryComponent implements OnInit {
   }
 
   getAllRentalDetailsByCarId(carId: number): void {
-    this.rentalService.getAllRentalDetailsByCarId(carId).subscribe(result => {
-      this.rentalDetails = result.data;
+    this.rentalService.getAllRentalDetailsByCarId(carId).subscribe(response => {
+      this.rentalDetails = response.data;
     })
   }
 }

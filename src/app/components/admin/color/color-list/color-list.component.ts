@@ -19,8 +19,8 @@ export class ColorListComponent implements OnInit {
   }
 
   getAllColors(): void {
-    this.colorService.getAll().subscribe(result => {
-      this.colors = result.data;
+    this.colorService.getAll().subscribe(response => {
+      this.colors = response.data;
     })
   }
 

@@ -19,8 +19,8 @@ export class ModelListComponent implements OnInit {
   }
 
   getAllModelDetails(): void {
-    this.modelService.getAllModelDetails().subscribe(result => {
-      this.modelDetails = result.data;
+    this.modelService.getAllModelDetails().subscribe(response => {
+      this.modelDetails = response.data;
     })
   }
 

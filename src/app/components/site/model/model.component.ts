@@ -21,15 +21,15 @@ export class ModelComponent implements OnInit {
   }
 
   getAll(): void {
-    this.modelService.getAll().subscribe(result => {
-      this.models = result.data;
+    this.modelService.getAll().subscribe(response => {
+      this.models = response.data;
       this.dataLoaded = true;
     });
   }
 
   getAllModelDetails(): void {
-    this.modelService.getAllModelDetails().subscribe(result => {
-      this.modelDetails = result.data;
+    this.modelService.getAllModelDetails().subscribe(response => {
+      this.modelDetails = response.data;
       this.dataLoaded = true;
     });
   }

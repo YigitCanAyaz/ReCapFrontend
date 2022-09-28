@@ -1,3 +1,4 @@
+import { LoginGuard } from './guards/login.guard';
 import { SiteLayoutComponent } from './components/site/site-layout/site-layout.component';
 import { LoginComponent } from './components/login/login.component';
 import { CarDetailPageComponent } from './components/site/car-detail-page/car-detail-page.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminLayoutComponent,
+    canActivate: [LoginGuard],
     children: [
       { path: "brands/list", component: BrandListComponent },
       { path: "cars/list", component: CarListComponent },

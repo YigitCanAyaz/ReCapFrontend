@@ -1,3 +1,4 @@
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { LoginGuard } from './guards/login.guard';
 import { SiteLayoutComponent } from './components/site/site-layout/site-layout.component';
 import { LoginComponent } from './components/login/login.component';
@@ -58,6 +59,9 @@ const routes: Routes = [
     component: AdminLayoutComponent,
     canActivate: [LoginGuard],
     children: [
+
+      { path: "", pathMatch: "full", component: AdminDashboardComponent },
+
       { path: "brands/list", component: BrandListComponent },
       { path: "cars/list", component: CarListComponent },
       { path: "colors/list", component: ColorListComponent },

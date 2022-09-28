@@ -56,6 +56,7 @@ import { RentalAddComponent } from './components/admin/rental/rental-add/rental-
 import { RentalUpdateComponent } from './components/admin/rental/rental-update/rental-update.component';
 import { RentalViewComponent } from './components/admin/rental/rental-view/rental-view.component';
 import { RentalRemoveComponent } from './components/admin/rental/rental-remove/rental-remove.component';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,8 @@ import { RentalRemoveComponent } from './components/admin/rental/rental-remove/r
     RentalAddComponent,
     RentalUpdateComponent,
     RentalViewComponent,
-    RentalRemoveComponent
+    RentalRemoveComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

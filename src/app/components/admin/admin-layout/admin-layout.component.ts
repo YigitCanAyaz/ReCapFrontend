@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLayoutComponent implements OnInit {
 
+  dashboardActivate: boolean = false;
   brandActive: boolean = false;
   carActive: boolean = false;
   customerActive: boolean = false;
@@ -20,9 +21,10 @@ export class AdminLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     let currentComponent = this.router.url.split('/')[2];
-    console.log(currentComponent);
     if (currentComponent !== undefined) {
       this.setAndRemoveActive(currentComponent);
+    } else {
+      this.setAndRemoveActive("");
     }
   }
 
@@ -32,6 +34,7 @@ export class AdminLayoutComponent implements OnInit {
 
   setAndRemoveActive(menuName: string) {
 
+    this.dashboardActivate = false;
     this.brandActive = false;
     this.carActive = false;
     this.customerActive = false;
@@ -41,6 +44,9 @@ export class AdminLayoutComponent implements OnInit {
 
 
     switch (menuName) {
+      case '':
+        this.dashboardActivate = true;
+        break;
       case 'brands':
         this.brandActive = true;
         break;

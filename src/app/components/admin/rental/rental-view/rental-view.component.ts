@@ -1,4 +1,7 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { RentalService } from 'src/app/services/concrete/rental.service';
+import { RentalDetail } from 'src/app/models/details/rentalDetail';
 
 @Component({
   selector: 'app-rental-view',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RentalViewComponent implements OnInit {
 
-  constructor() { }
+  rentalDetail: RentalDetail;
+
+  constructor(private rentalService: RentalService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      if (params["rentalId"]) {
+        this.getRentalDetailsById(params["rentalId"]);
+      }
+    });
+  }
+
+  getRentalDetailsById(id: number): void {
+    this.rentalService.getRentalDetailsById(id).subscribe(response => {
+      this.rentalDetail = response.data;
+    })
   }
 
 }

@@ -1,1 +1,17 @@
-<p>customer-view works!</p>
+<div class="customerd">
+  <div class="customerd-header">
+    <div class="d-flex">
+      <a class="btn btn-sm me-auto p-2" routerLink="/admin/customers/list"><i class="fa fa-arrow-left fa-lg"></i></a>
+      <a class="btn btn-sm p-2" routerLink="/admin/customers/update/{{customerDetail.id}}"><i
+          class="fa fa-pencil fa-lg"></i></a>
+      <a class="btn btn-sm p-2" routerLink="/admin/customers/remove/{{customerDetail.id}}"><i class="fa fa-trash fa-lg"
+          aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="customerd-body">
+    <h5 class="customerd-title text-center mt-2 mb-5">Selected Customer Fields:</h5>
+    <p class="customerd-text"><b>First Name:</b>&emsp;{{customerDetail.firstName}}</p>
+    <p class="customerd-text"><b>Last Name:</b>&emsp;{{customerDetail.lastName}}</p>
+    <p class="customerd-text"><b>Company:</b>&emsp;{{customerDetail.companyName}}</p>
+  </div>
+</div>

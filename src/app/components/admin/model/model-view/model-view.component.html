@@ -1,1 +1,16 @@
-<p>model-view works!</p>
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex">
+      <a class="btn btn-sm me-auto p-2" routerLink="/admin/models/list"><i class="fa fa-arrow-left fa-lg"></i></a>
+      <a class="btn btn-sm p-2" routerLink="/admin/models/update/{{modelDetail.id}}"><i
+          class="fa fa-pencil fa-lg"></i></a>
+      <a class="btn btn-sm p-2" routerLink="/admin/models/remove/{{modelDetail.id}}"><i class="fa fa-trash fa-lg"
+          aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title text-center mt-2 mb-5">Selected Model Fields:</h5>
+    <p class="card-text"><b>Model Name:</b>&emsp;{{modelDetail.name}}</p>
+    <p class="card-text"><b>Brand Name:</b>&emsp;{{modelDetail.brandName}}</p>
+  </div>
+</div>

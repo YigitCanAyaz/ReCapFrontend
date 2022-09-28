@@ -27,9 +27,24 @@
               "./node_modules/font-awesome/css/font-awesome.css",
               "./src/assets/css/dore.light.blueyale.min.css",
               "./node_modules/ngx-toastr/toastr.css",
-              "src/styles.css"
+              "src/styles.css",
+              "./src/assets/font/iconsmind-s/css/iconsminds.css",
+              "./src/assets/font/simple-line-icons/css/simple-line-icons.css",
+              "./src/assets/css/vendor/bootstrap.min.css",
+              "./src/assets/css/vendor/bootstrap.rtl.only.min.css",
+              "./src/assets/css/vendor/component-custom-switch.min.css",
+              "./src/assets/css/vendor/perfect-scrollbar.css",
+              "./src/assets/css/main.css",
+              "./src/assets/css/dore.light.redruby.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./src/assets/js/vendor/jquery-3.3.1.min.js",
+              "./src/assets/js/vendor/bootstrap.bundle.min.js",
+              "./src/assets/js/vendor/perfect-scrollbar.min.js",
+              "./src/assets/js/vendor/mousetrap.min.js",
+              "./src/assets/js/dore.script.js",
+              "./src/assets/js/scripts.single.theme.js"
+            ]
           },
           "configurations": {
             "production": {

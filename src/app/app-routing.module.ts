@@ -72,12 +72,12 @@ const routes: Routes = [
       { path: "models/view/:modelId", component: ModelViewComponent },
       { path: "rentals/view/:rentalId", component: RentalViewComponent },
 
-      { path: "brands/add/:brandId", component: BrandAddComponent },
-      { path: "cars/add/:carId", component: CarAddComponent },
-      { path: "colors/add/:colorId", component: ColorAddComponent },
-      { path: "customers/add/:customerId", component: CustomerAddComponent },
-      { path: "models/add/:modelId", component: ModelAddComponent },
-      { path: "rentals/add/:rentalId", component: RentalAddComponent },
+      { path: "brands/add", component: BrandAddComponent },
+      { path: "cars/add", component: CarAddComponent },
+      { path: "colors/add", component: ColorAddComponent },
+      { path: "customers/add", component: CustomerAddComponent },
+      { path: "models/add", component: ModelAddComponent },
+      { path: "rentals/add", component: RentalAddComponent },
 
       { path: "brands/update/:brandId", component: BrandUpdateComponent },
       { path: "cars/update/:carId", component: CarUpdateComponent },

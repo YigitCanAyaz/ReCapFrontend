@@ -25,10 +25,10 @@
         </div>
       </div>
       <div class="card-body">
-        <form>
+        <form [formGroup]="brandAddForm" (ngSubmit)="addBrand()">
           <div class="form-group">
-            <label for="brandName">Name</label>
-            <input type="text" class="form-control" id="brandName" placeholder="Enter Name">
+            <label for="name">Name</label>
+            <input formControlName="name" type="text" class="form-control" id="name" placeholder="Enter Name">
           </div>
           <button type="submit" class="btn btn-success mb-0 mt-1">Submit</button>
         </form>

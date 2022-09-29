@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Brand } from 'src/app/models/entities/brand';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
+import { ResponseModel } from 'src/app/models/responseModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 import { IBrandService } from '../abstract/iBrandService';
 @Injectable({
@@ -22,5 +23,9 @@ export class BrandService implements IBrandService {
   getById(id: number): Observable<SingleResponseModel<Brand>> {
     const path = this.baseUrl + 'getbyid?id=' + id;
     return this.httpClient.get<SingleResponseModel<Brand>>(path);
+  }
+
+  add(brand: Brand): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "add", brand);
   }
 }

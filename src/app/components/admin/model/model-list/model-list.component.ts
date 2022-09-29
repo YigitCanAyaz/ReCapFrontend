@@ -11,6 +11,7 @@ import { ModelDetail } from 'src/app/models/details/modelDetail';
 export class ModelListComponent implements OnInit {
 
   modelDetails: ModelDetail[] = [];
+  filterText: string = "";
 
   constructor(private modelService: ModelService, private router: Router) { }
 

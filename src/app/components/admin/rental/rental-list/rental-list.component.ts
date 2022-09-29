@@ -11,6 +11,7 @@ import { RentalDetail } from 'src/app/models/details/rentalDetail';
 export class RentalListComponent implements OnInit {
 
   rentalDetails: RentalDetail[] = [];
+  filterText: string = "";
 
   constructor(private rentalService: RentalService, private router: Router) { }
 

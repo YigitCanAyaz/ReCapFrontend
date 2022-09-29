@@ -57,6 +57,9 @@ import { RentalUpdateComponent } from './components/admin/rental/rental-update/r
 import { RentalViewComponent } from './components/admin/rental/rental-view/rental-view.component';
 import { RentalRemoveComponent } from './components/admin/rental/rental-remove/rental-remove.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { CustomerDetailFirstNameFilterPipePipe } from './pipes/customer-detail-first-name-filter-pipe.pipe';
+import { ModelDetailFilterPipePipe } from './pipes/model-detail-filter-pipe.pipe';
+import { RentalDetailFirstNameFilterPipePipe } from './pipes/rental-detail-first-name-filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -108,7 +111,10 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
     RentalUpdateComponent,
     RentalViewComponent,
     RentalRemoveComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    CustomerDetailFirstNameFilterPipePipe,
+    ModelDetailFilterPipePipe,
+    RentalDetailFirstNameFilterPipePipe,
   ],
   imports: [
     BrowserModule,

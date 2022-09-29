@@ -11,6 +11,7 @@ import { Color } from 'src/app/models/entities/color';
 export class ColorListComponent implements OnInit {
 
   colors: Color[] = [];
+  filterText: string = "";
 
   constructor(private colorService: ColorService, private router: Router) { }
 

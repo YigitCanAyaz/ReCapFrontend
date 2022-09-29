@@ -11,6 +11,7 @@ import { CustomerDetail } from 'src/app/models/details/customerDetail';
 export class CustomerListComponent implements OnInit {
 
   customerDetails: CustomerDetail[] = [];
+  filterText: string = "";
 
   constructor(private customerService: CustomerService, private router: Router) { }
 

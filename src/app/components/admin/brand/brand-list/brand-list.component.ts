@@ -11,6 +11,7 @@ import { Brand } from 'src/app/models/entities/brand';
 export class BrandListComponent implements OnInit {
 
   brands: Brand[] = [];
+  filterText: string = "";
 
   constructor(private brandService: BrandService, private router: Router) { }
 

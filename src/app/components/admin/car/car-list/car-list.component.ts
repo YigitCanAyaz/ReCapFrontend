@@ -11,6 +11,7 @@ import { CarDetail } from 'src/app/models/details/carDetail';
 export class CarListComponent implements OnInit {
 
   carDetails: CarDetail[] = [];
+  filterText: string = "";
 
   constructor(private carService: CarService, private router: Router) { }
 
@@ -26,6 +27,10 @@ export class CarListComponent implements OnInit {
 
   getCarDetailViewById(carId: number): void {
     this.router.navigate(["/admin/cars/view/" + carId]);
+  }
+
+  getCarImage(carDetail: CarDetail): string {
+    return this.carService.getCarImage(carDetail);
   }
 
 }

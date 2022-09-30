@@ -177,50 +177,52 @@
   </nav>
   <div class="menu">
     <div class="main-menu">
-      <ul class="list-unstyled">
-        <li [class]="checkActive(dashboardActivate)" (click)="setAndRemoveActive('')">
-          <a routerLink="/admin">
-            <i class="fa fa-home" aria-hidden="true"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li [class]="checkActive(brandActive)" (click)="setAndRemoveActive('brands')">
-          <a routerLink="/admin/brands/list">
-            <i class="fa fa-industry" aria-hidden="true"></i>
-            <span>Brands</span>
-          </a>
-        </li>
-        <li [class]="checkActive(carActive)" (click)="setAndRemoveActive('cars')">
-          <a routerLink="/admin/cars/list">
-            <i class="fa fa-car" aria-hidden="true"></i>
-            <span>Cars</span>
-          </a>
-        </li>
-        <li [class]="checkActive(colorActive)" (click)="setAndRemoveActive('colors')">
-          <a routerLink="/admin/colors/list">
-            <i class="fa fa-paint-brush" aria-hidden="true"></i>
-            <span>Colors</span>
-          </a>
-        </li>
-        <li [class]="checkActive(customerActive)" (click)="setAndRemoveActive('customers')">
-          <a routerLink="/admin/customers/list">
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <span>Customers</span>
-          </a>
-        </li>
-        <li [class]="checkActive(modelActive)" (click)="setAndRemoveActive('models')">
-          <a routerLink="/admin/models/list">
-            <i class="fa fa-taxi" aria-hidden="true"></i>
-            <span>Models</span>
-          </a>
-        </li>
-        <li [class]="checkActive(rentalActive)" (click)="setAndRemoveActive('rentals')">
-          <a routerLink="/admin/rentals/list">
-            <i class="fa fa-folder-open" aria-hidden="true"></i>
-            <span>Rentals</span>
-          </a>
-        </li>
-      </ul>
+      <div class="scroll">
+        <ul class="list-unstyled">
+          <li [class]="checkActive(dashboardActivate)" (click)="setAndRemoveActive('')">
+            <a routerLink="/admin">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li [class]="checkActive(brandActive)" (click)="setAndRemoveActive('brands')">
+            <a routerLink="/admin/brands/list">
+              <i class="fa fa-industry" aria-hidden="true"></i>
+              <span>Brands</span>
+            </a>
+          </li>
+          <li [class]="checkActive(carActive)" (click)="setAndRemoveActive('cars')">
+            <a routerLink="/admin/cars/list">
+              <i class="fa fa-car" aria-hidden="true"></i>
+              <span>Cars</span>
+            </a>
+          </li>
+          <li [class]="checkActive(colorActive)" (click)="setAndRemoveActive('colors')">
+            <a routerLink="/admin/colors/list">
+              <i class="fa fa-paint-brush" aria-hidden="true"></i>
+              <span>Colors</span>
+            </a>
+          </li>
+          <li [class]="checkActive(customerActive)" (click)="setAndRemoveActive('customers')">
+            <a routerLink="/admin/customers/list">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>Customers</span>
+            </a>
+          </li>
+          <li [class]="checkActive(modelActive)" (click)="setAndRemoveActive('models')">
+            <a routerLink="/admin/models/list">
+              <i class="fa fa-taxi" aria-hidden="true"></i>
+              <span>Models</span>
+            </a>
+          </li>
+          <li [class]="checkActive(rentalActive)" (click)="setAndRemoveActive('rentals')">
+            <a routerLink="/admin/rentals/list">
+              <i class="fa fa-folder-open" aria-hidden="true"></i>
+              <span>Rentals</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- <div class="sub-menu">
       <div class="scroll">

@@ -47,6 +47,7 @@
               "./src/assets/js/vendor/jquery-3.3.1.min.js",
               "./src/assets/js/vendor/bootstrap.bundle.min.js",
               "./src/assets/js/vendor/perfect-scrollbar.min.js",
+              "./src/assets/js/vendor/mousetrap.min.js",
               "./src/assets/js/vendor/select2.full.js",
               "./src/assets/js/vendor/bootstrap-datepicker.js",
               "./src/assets/js/vendor/datatables.min.js",

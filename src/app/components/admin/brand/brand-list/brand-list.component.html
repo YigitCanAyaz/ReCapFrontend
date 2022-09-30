@@ -39,8 +39,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let brand of brands | brandFilterPipe: filterText" (click)="getBrandViewById(brand.id)">
-              <td><b>{{brand.id}}</b></td>
+            <tr *ngFor="let brand of brands | brandFilterPipe: filterText; let i = index"
+              (click)="getBrandViewById(brand.id)">
+              <td><b>{{i + 1}}</b></td>
               <td>{{brand.name}}</td>
             </tr>
           </tbody>

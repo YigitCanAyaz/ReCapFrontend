@@ -31,7 +31,7 @@
             <input formControlName="name" type="text" class="form-control" id="name">
           </div>
           <div class="form-group">
-            <label for="modelId">Name</label>
+            <label for="modelId">Model Name</label>
             <select formControlName="modelId" id="modelId" class="form-control">
               <option label="&nbsp;" disabled>&nbsp;</option>
               <ng-container *ngFor="let modelDetail of modelDetails">
@@ -39,10 +39,6 @@
                   ({{modelDetail.brandName | uppercase}})</option>
               </ng-container>
             </select>
-          </div>
-          <div class="form-group">
-            <label for="modelYear">Model Year</label>
-            <input formControlName="modelYear" type="number" class="form-control" id="modelYear">
           </div>
           <button type="submit" class="btn btn-success mb-0 mt-1">Submit</button>
         </form>

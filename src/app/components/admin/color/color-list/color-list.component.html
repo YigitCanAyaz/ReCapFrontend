@@ -39,8 +39,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let color of colors | colorFilterPipe: filterText" (click)="getColorViewById(color.id)">
-              <td><b>{{color.id}}</b></td>
+            <tr *ngFor="let color of colors | colorFilterPipe: filterText; let i = index"
+              (click)="getColorViewById(color.id)">
+              <td><b>{{i + 1}}</b></td>
               <td>{{color.name}}</td>
             </tr>
           </tbody>

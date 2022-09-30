@@ -36,15 +36,17 @@
               <th scope="col">#</th>
               <th scope="col">Name</th>
               <th scope="col">Brand</th>
+              <th scope="col">Year</th>
 
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let modelDetail of modelDetails | modelDetailFilterPipe: filterText"
+            <tr *ngFor="let modelDetail of modelDetails | modelDetailFilterPipe: filterText; let i = index"
               (click)="getModelDetailViewById(modelDetail.id)">
-              <td><b>{{modelDetail.id}}</b></td>
+              <td><b>{{i + 1}}</b></td>
               <td>{{modelDetail.name}}</td>
               <td>{{modelDetail.brandName}}</td>
+              <td>{{modelDetail.year}}</td>
             </tr>
           </tbody>
         </table>

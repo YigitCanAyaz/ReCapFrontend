@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ModelDetail } from 'src/app/models/details/modelDetail';
 import { Model } from 'src/app/models/entities/model';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
+import { ResponseModel } from 'src/app/models/responseModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 import { IModelService } from '../abstract/iModelService';
 
@@ -33,6 +34,10 @@ export class ModelService implements IModelService {
   getAllModelDetails(): Observable<ListResponseModel<ModelDetail>> {
     const path = this.baseUrl + 'getallmodeldetails';
     return this.httpClient.get<ListResponseModel<ModelDetail>>(path);
+  }
+
+  add(model: Model): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "add", model);
   }
 
 }

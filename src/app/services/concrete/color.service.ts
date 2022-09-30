@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Color } from 'src/app/models/entities/color';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
+import { ResponseModel } from 'src/app/models/responseModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 import { IColorService } from '../abstract/iColorService';
 
@@ -23,6 +24,10 @@ export class ColorService implements IColorService {
   getById(id: number): Observable<SingleResponseModel<Color>> {
     const path = this.baseUrl + "getbyid?id=" + id;
     return this.httpClient.get<SingleResponseModel<Color>>(path);
+  }
+
+  add(color: Color): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "add", color);
   }
 
 }

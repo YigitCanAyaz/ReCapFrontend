@@ -1,6 +1,5 @@
-export interface CarDetail {
+export interface ModelColorDetail {
   id: number;
-  modelColorId: number;
   brandId: number;
   modelId: number;
   colorId: number;
@@ -8,7 +7,4 @@ export interface CarDetail {
   modelName: string;
   colorName: string;
   modelYear: number;
-  dailyPrice: number;
-  description: string;
-  imagePath: string[];
 }

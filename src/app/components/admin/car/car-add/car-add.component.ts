@@ -1,4 +1,11 @@
+import { ModelDetail } from './../../../../models/details/modelDetail';
+import { Model } from './../../../../models/entities/model';
+import { ModelService } from 'src/app/services/concrete/model.service';
+import { ToastrService } from 'ngx-toastr';
+import { CarService } from './../../../../services/concrete/car.service';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car-add',
@@ -7,9 +14,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarAddComponent implements OnInit {
 
-  constructor() { }
+  carAddForm: FormGroup;
+  models: Model[] = [];
+  modelDetails: ModelDetail[] = [];
+
+  constructor(private carService: CarService, private modelService: ModelService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
+    this.createCarAddForm();
+    this.getAllModelDetails();
   }
+
+  createCarAddForm(): void {
+    this.carAddForm = this.formBuilder.group({
+      name: ["", [Validators.required]],
+      modelId: ["", [Validators.required]],
+      modelYear: ["", [Validators.required]],
+      colorId: ["", [Validators.required]],
+      dailyPrice: ["", [Validators.required]],
+      description: ["", [Validators.required]],
+    });
+  }
+
+  addCar(): void {
+    console.log(this.carAddForm.controls['modelId'].value);
+    console.log(this.carAddForm.value);
+    if (this.carAddForm.valid) {
+      this.carService.add(this.carAddForm.value).subscribe(response => {
+        this.toastrService.info(response.message, this.carAddForm.controls['name'].value);
+        this.router.navigate(["/admin/cars/list"]);
+      }, responseError => {
+        this.toastrService.error(responseError.error);
+      });
+    }
+
+    else {
+      this.toastrService.error("Fill the form correctly");
+    }
+  }
+
+  getAllModels(): void {
+    this.modelService.getAll().subscribe(response => {
+      this.models = response.data;
+    })
+  }
+
+  getAllModelDetails(): void {
+    this.modelService.getAllModelDetails().subscribe(response => {
+      this.modelDetails = response.data;
+    })
+  }
+
+
+
+  get name() { return this.carAddForm.get('name') }
+  get modelName() { return this.carAddForm.get('modelName') }
 
 }

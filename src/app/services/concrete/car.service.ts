@@ -6,6 +6,7 @@ import { CarDetail } from 'src/app/models/details/carDetail';
 import { Car } from 'src/app/models/entities/car';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
+import { ResponseModel } from 'src/app/models/responseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -74,6 +75,10 @@ export class CarService implements ICarService {
       const path = this.imageUrl + carDetail.imagePath;
       return path;
     }
+  }
+
+  add(car: Car): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "add", car);
   }
 
 }

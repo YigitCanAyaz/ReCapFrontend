@@ -77,6 +77,11 @@ import { UserViewComponent } from './components/admin/user/user-view/user-view.c
 import { UserRemoveComponent } from './components/admin/user/user-remove/user-remove.component';
 import { UserUpdateComponent } from './components/admin/user/user-update/user-update.component';
 import { UserLastNameFilterPipePipe } from './pipes/user-last-name-filter-pipe.pipe';
+import { CarImageAddComponent } from './components/admin/carImage/car-image-add/car-image-add.component';
+import { CarImageViewComponent } from './components/admin/carImage/car-image-view/car-image-view.component';
+import { CarImageListComponent } from './components/admin/carImage/car-image-list/car-image-list.component';
+import { CarImageRemoveComponent } from './components/admin/carImage/car-image-remove/car-image-remove.component';
+import { CarImageUpdateComponent } from './components/admin/carImage/car-image-update/car-image-update.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -151,6 +156,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     UserRemoveComponent,
     UserUpdateComponent,
     UserLastNameFilterPipePipe,
+    CarImageAddComponent,
+    CarImageViewComponent,
+    CarImageListComponent,
+    CarImageRemoveComponent,
+    CarImageUpdateComponent,
   ],
   imports: [
     BrowserModule,

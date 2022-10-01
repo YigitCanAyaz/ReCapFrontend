@@ -215,6 +215,12 @@
               <span>Customers</span>
             </a>
           </li>
+          <li [class]="checkActive(userActive)" (click)="setAndRemoveActive('users')">
+            <a routerLink="/admin/users/list">
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <span>Users</span>
+            </a>
+          </li>
           <li [class]="checkActive(modelActive)" (click)="setAndRemoveActive('models')">
             <a routerLink="/admin/models/list">
               <i class="fa fa-taxi" aria-hidden="true"></i>

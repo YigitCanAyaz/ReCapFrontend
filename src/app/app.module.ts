@@ -70,6 +70,12 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { ModelColorDetailFilterPipePipe } from './pipes/model-color-detail-filter-pipe.pipe';
 import { CarDetailDescriptionFilterPipePipe } from './pipes/car-detail-description-filter-pipe.pipe';
+import { UserListComponent } from './components/admin/user/user-list/user-list.component';
+import { UserFilterPipePipe } from './pipes/user-filter-pipe.pipe';
+import { UserAddComponent } from './components/admin/user/user-add/user-add.component';
+import { UserViewComponent } from './components/admin/user/user-view/user-view.component';
+import { UserRemoveComponent } from './components/admin/user/user-remove/user-remove.component';
+import { UserUpdateComponent } from './components/admin/user/user-update/user-update.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -137,6 +143,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ModelColorRemoveComponent,
     ModelColorDetailFilterPipePipe,
     CarDetailDescriptionFilterPipePipe,
+    UserListComponent,
+    UserFilterPipePipe,
+    UserAddComponent,
+    UserViewComponent,
+    UserRemoveComponent,
+    UserUpdateComponent,
   ],
   imports: [
     BrowserModule,

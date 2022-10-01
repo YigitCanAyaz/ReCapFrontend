@@ -40,6 +40,12 @@ import { ModelRemoveComponent } from './components/admin/model/model-remove/mode
 import { RentalRemoveComponent } from './components/admin/rental/rental-remove/rental-remove.component';
 import { ModelColorListComponent } from './components/admin/modelColor/model-color-list/model-color-list.component';
 import { ModelColorAddComponent } from './components/admin/modelColor/model-color-add/model-color-add.component';
+import { UserListComponent } from './components/admin/user/user-list/user-list.component';
+import { ModelColorViewComponent } from './components/admin/modelColor/model-color-view/model-color-view.component';
+import { UserViewComponent } from './components/admin/user/user-view/user-view.component';
+import { UserAddComponent } from './components/admin/user/user-add/user-add.component';
+import { ModelColorUpdateComponent } from './components/admin/modelColor/model-color-update/model-color-update.component';
+import { UserUpdateComponent } from './components/admin/user/user-update/user-update.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -71,6 +77,7 @@ const routes: Routes = [
       { path: "models/list", component: ModelListComponent },
       { path: "rentals/list", component: RentalListComponent },
       { path: "modelcolors/list", component: ModelColorListComponent },
+      { path: "users/list", component: UserListComponent },
 
       { path: "brands/view/:brandId", component: BrandViewComponent },
       { path: "cars/view/:carId", component: CarViewComponent },
@@ -78,6 +85,8 @@ const routes: Routes = [
       { path: "customers/view/:customerId", component: CustomerViewComponent },
       { path: "models/view/:modelId", component: ModelViewComponent },
       { path: "rentals/view/:rentalId", component: RentalViewComponent },
+      { path: "modelcolors/view/:modelColorId", component: ModelColorViewComponent },
+      { path: "users/view/:userId", component: UserViewComponent },
 
       { path: "brands/add", component: BrandAddComponent },
       { path: "cars/add", component: CarAddComponent },
@@ -86,6 +95,8 @@ const routes: Routes = [
       { path: "models/add", component: ModelAddComponent },
       { path: "modelcolors/add", component: ModelColorAddComponent },
       { path: "rentals/add", component: RentalAddComponent },
+      { path: "users/add", component: UserAddComponent },
+
 
       { path: "brands/update/:brandId", component: BrandUpdateComponent },
       { path: "cars/update/:carId", component: CarUpdateComponent },
@@ -93,6 +104,8 @@ const routes: Routes = [
       { path: "customers/update/:customerId", component: CustomerUpdateComponent },
       { path: "models/update/:modelId", component: ModelUpdateComponent },
       { path: "rentals/update/:rentalId", component: RentalUpdateComponent },
+      { path: "modelcolors/update/:modelColorId", component: ModelColorUpdateComponent },
+      { path: "users/update/:userId", component: UserUpdateComponent },
 
       { path: "brands/remove/:brandId", component: BrandRemoveComponent },
       { path: "cars/remove/:carId", component: CarRemoveComponent },

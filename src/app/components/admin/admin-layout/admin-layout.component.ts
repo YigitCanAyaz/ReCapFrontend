@@ -17,6 +17,7 @@ export class AdminLayoutComponent implements OnInit {
   modelActive: boolean = false;
   modelColorActive: boolean = false;
   rentalActive: boolean = false;
+  userActive: boolean = false;
 
   public config: PerfectScrollbarConfigInterface = {};
 
@@ -45,6 +46,7 @@ export class AdminLayoutComponent implements OnInit {
     this.modelActive = false;
     this.modelColorActive = false;
     this.rentalActive = false;
+    this.userActive = false;
 
 
     switch (menuName) {
@@ -62,6 +64,9 @@ export class AdminLayoutComponent implements OnInit {
         break;
       case 'customers':
         this.customerActive = true;
+        break;
+      case 'users':
+        this.userActive = true;
         break;
       case 'models':
         this.modelActive = true;

@@ -46,6 +46,11 @@ import { UserViewComponent } from './components/admin/user/user-view/user-view.c
 import { UserAddComponent } from './components/admin/user/user-add/user-add.component';
 import { ModelColorUpdateComponent } from './components/admin/modelColor/model-color-update/model-color-update.component';
 import { UserUpdateComponent } from './components/admin/user/user-update/user-update.component';
+import { CarImageListComponent } from './components/admin/carImage/car-image-list/car-image-list.component';
+import { CarImageViewComponent } from './components/admin/carImage/car-image-view/car-image-view.component';
+import { CarImageAddComponent } from './components/admin/carImage/car-image-add/car-image-add.component';
+import { CarImageUpdateComponent } from './components/admin/carImage/car-image-update/car-image-update.component';
+import { CarImageRemoveComponent } from './components/admin/carImage/car-image-remove/car-image-remove.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -72,6 +77,7 @@ const routes: Routes = [
 
       { path: "brands/list", component: BrandListComponent },
       { path: "cars/list", component: CarListComponent },
+      { path: "carimages/list", component: CarImageListComponent },
       { path: "colors/list", component: ColorListComponent },
       { path: "customers/list", component: CustomerListComponent },
       { path: "models/list", component: ModelListComponent },
@@ -81,6 +87,7 @@ const routes: Routes = [
 
       { path: "brands/view/:brandId", component: BrandViewComponent },
       { path: "cars/view/:carId", component: CarViewComponent },
+      { path: "carimages/view/:carImageId", component: CarImageViewComponent },
       { path: "colors/view/:colorId", component: ColorViewComponent },
       { path: "customers/view/:customerId", component: CustomerViewComponent },
       { path: "models/view/:modelId", component: ModelViewComponent },
@@ -90,6 +97,7 @@ const routes: Routes = [
 
       { path: "brands/add", component: BrandAddComponent },
       { path: "cars/add", component: CarAddComponent },
+      { path: "carimages/add", component: CarImageAddComponent },
       { path: "colors/add", component: ColorAddComponent },
       { path: "customers/add", component: CustomerAddComponent },
       { path: "models/add", component: ModelAddComponent },
@@ -100,6 +108,7 @@ const routes: Routes = [
 
       { path: "brands/update/:brandId", component: BrandUpdateComponent },
       { path: "cars/update/:carId", component: CarUpdateComponent },
+      { path: "carimages/update/:carImageId", component: CarImageUpdateComponent },
       { path: "colors/update/:colorId", component: ColorUpdateComponent },
       { path: "customers/update/:customerId", component: CustomerUpdateComponent },
       { path: "models/update/:modelId", component: ModelUpdateComponent },
@@ -109,6 +118,7 @@ const routes: Routes = [
 
       { path: "brands/remove/:brandId", component: BrandRemoveComponent },
       { path: "cars/remove/:carId", component: CarRemoveComponent },
+      { path: "carimages/remove/:carImageId", component: CarImageRemoveComponent },
       { path: "colors/remove/:colorId", component: ColorRemoveComponent },
       { path: "customers/remove/:customerId", component: CustomerRemoveComponent },
       { path: "models/remove/:modelId", component: ModelRemoveComponent },

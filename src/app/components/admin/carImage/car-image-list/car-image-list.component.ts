@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CarImageDetail } from 'src/app/models/details/carImageDetail';
+import { CarImageService } from 'src/app/services/concrete/car-image.service';
 
 @Component({
   selector: 'app-car-image-list',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarImageListComponent implements OnInit {
 
-  constructor() { }
+  carImageDetails: CarImageDetail[] = [];
+  filterText: string = "";
+
+  constructor(private carImageService: CarImageService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getAllCarImageDetails();
+  }
+
+  getAllCarImageDetails(): void {
+    this.carImageService.getAllCarImageDetails().subscribe(response => {
+      this.carImageDetails = response.data;
+      console.log(response.data);
+    })
+  }
+
+  getCarImageDetailViewById(carImageId: number): void {
+    this.router.navigate(["/admin/carimages/view/" + carImageId]);
   }
 
 }

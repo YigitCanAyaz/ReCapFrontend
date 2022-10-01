@@ -37,6 +37,7 @@
               "./src/assets/css/vendor/select2-bootstrap.min.css",
               "./src/assets/css/vendor/dropzone.min.css",
               "./src/assets/css/vendor/perfect-scrollbar.css",
+              "./src/assets/css/vendor/cropper.min.css",
               "./src/assets/css/vendor/bootstrap-tagsinput.css",
               "./src/assets/css/vendor/owl.carousel.min.css",
               "./src/assets/css/vendor/bootstrap-stars.css",

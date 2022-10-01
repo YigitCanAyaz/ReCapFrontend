@@ -26,6 +26,6 @@ export class ModelColorListComponent implements OnInit {
   }
 
   getModelColorDetailViewById(modelColorId: number): void {
-    this.router.navigate(["/admin/modelColors/view/" + modelColorId]);
+    this.router.navigate(["/admin/modelcolors/view/" + modelColorId]);
   }
 }

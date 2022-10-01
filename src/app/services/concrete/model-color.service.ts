@@ -32,12 +32,12 @@ export class ModelColorService implements IModelColorService {
   }
 
   getModelColorDetailsById(id: number): Observable<SingleResponseModel<ModelColorDetail>> {
-    const path = this.baseUrl + "getmodelColordetailsbyid?id=" + id;
+    const path = this.baseUrl + "getmodelcolordetailsbyid?id=" + id;
     return this.httpClient.get<SingleResponseModel<ModelColorDetail>>(path);
   }
 
   getAllModelColorDetails(): Observable<ListResponseModel<ModelColorDetail>> {
-    const path = this.baseUrl + 'getallmodelColordetails';
+    const path = this.baseUrl + 'getallmodelcolordetails';
     return this.httpClient.get<ListResponseModel<ModelColorDetail>>(path);
   }
 

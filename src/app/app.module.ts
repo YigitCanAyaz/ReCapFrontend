@@ -60,6 +60,11 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
 import { CustomerDetailFirstNameFilterPipePipe } from './pipes/customer-detail-first-name-filter-pipe.pipe';
 import { ModelDetailFilterPipePipe } from './pipes/model-detail-filter-pipe.pipe';
 import { RentalDetailFirstNameFilterPipePipe } from './pipes/rental-detail-first-name-filter-pipe.pipe';
+import { ModelColorAddComponent } from './components/admin/modelColor/model-color-add/model-color-add.component';
+import { ModelColorListComponent } from './components/admin/modelColor/model-color-list/model-color-list.component';
+import { ModelColorViewComponent } from './components/admin/modelColor/model-color-view/model-color-view.component';
+import { ModelColorUpdateComponent } from './components/admin/modelColor/model-color-update/model-color-update.component';
+import { ModelColorRemoveComponent } from './components/admin/modelColor/model-color-remove/model-color-remove.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +120,11 @@ import { RentalDetailFirstNameFilterPipePipe } from './pipes/rental-detail-first
     CustomerDetailFirstNameFilterPipePipe,
     ModelDetailFilterPipePipe,
     RentalDetailFirstNameFilterPipePipe,
+    ModelColorAddComponent,
+    ModelColorListComponent,
+    ModelColorViewComponent,
+    ModelColorUpdateComponent,
+    ModelColorRemoveComponent,
   ],
   imports: [
     BrowserModule,

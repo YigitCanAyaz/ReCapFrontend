@@ -19,19 +19,17 @@ export class ModelAddComponent implements OnInit {
   brands: Brand[] = [];
   colors: Color[] = [];
 
-  constructor(private modelService: ModelService, private brandService: BrandService, private colorService: ColorService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }
+  constructor(private modelService: ModelService, private brandService: BrandService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
     this.createModelAddForm();
     this.getAllBrands();
-    this.getAllColors();
   }
 
   createModelAddForm(): void {
     this.modelAddForm = this.formBuilder.group({
       name: ["", [Validators.required]],
       brandId: ["", [Validators.required]],
-      colorId: ["", [Validators.required]],
       year: ["", [Validators.required]]
     });
   }
@@ -56,12 +54,6 @@ export class ModelAddComponent implements OnInit {
   getAllBrands(): void {
     this.brandService.getAll().subscribe(response => {
       this.brands = response.data;
-    })
-  }
-
-  getAllColors(): void {
-    this.colorService.getAll().subscribe(response => {
-      this.colors = response.data;
     })
   }
 

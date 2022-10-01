@@ -11,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class UserListComponent implements OnInit {
 
   users: UserForInfoDetail[] = [];
-  filterText: string = "";
+  firstNameFilterText: string = "";
+  lastNameFilterText: string = "";
 
   constructor(private userService: UserService, private router: Router) { }
 

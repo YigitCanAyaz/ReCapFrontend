@@ -23,8 +23,8 @@
             <div class="float-left">
               <div>
                 <label>
-                  <input type="search" class="form-control form-control-sm" placeholder="Search By First Name"
-                    [(ngModel)]="filterText">
+                  <input type="search" class="form-control form-control-sm" placeholder="Search By Last Name"
+                    [(ngModel)]="lastNameFilterText">
                 </label>
               </div>
             </div>
@@ -41,7 +41,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let user of users | userFilterPipe: filterText; let i = index"
+            <tr *ngFor="let user of users | userLastNameFilterPipe: lastNameFilterText; let i = index"
               (click)="getUserViewById(user.id)">
               <td><b>{{i + 1}}</b></td>
               <td>{{user.firstName}}</td>

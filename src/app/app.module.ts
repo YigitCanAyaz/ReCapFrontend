@@ -76,6 +76,7 @@ import { UserAddComponent } from './components/admin/user/user-add/user-add.comp
 import { UserViewComponent } from './components/admin/user/user-view/user-view.component';
 import { UserRemoveComponent } from './components/admin/user/user-remove/user-remove.component';
 import { UserUpdateComponent } from './components/admin/user/user-update/user-update.component';
+import { UserLastNameFilterPipePipe } from './pipes/user-last-name-filter-pipe.pipe';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -149,6 +150,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     UserViewComponent,
     UserRemoveComponent,
     UserUpdateComponent,
+    UserLastNameFilterPipePipe,
   ],
   imports: [
     BrowserModule,

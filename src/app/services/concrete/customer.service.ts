@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CustomerDetail } from 'src/app/models/details/customerDetail';
 import { Customer } from 'src/app/models/entities/customer';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
+import { ResponseModel } from 'src/app/models/responseModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 import { ICustomerService } from '../abstract/iCustomerService';
 
@@ -34,6 +35,10 @@ export class CustomerService implements ICustomerService {
   getAllCustomerDetails(): Observable<ListResponseModel<CustomerDetail>> {
     const path = this.baseUrl + 'getallcustomerdetails';
     return this.httpClient.get<ListResponseModel<CustomerDetail>>(path);
+  }
+
+  add(customer: Customer): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "add", customer);
   }
 
 }

@@ -17,7 +17,6 @@ export class ModelAddComponent implements OnInit {
 
   modelAddForm: FormGroup;
   brands: Brand[] = [];
-  colors: Color[] = [];
 
   constructor(private modelService: ModelService, private brandService: BrandService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }
 

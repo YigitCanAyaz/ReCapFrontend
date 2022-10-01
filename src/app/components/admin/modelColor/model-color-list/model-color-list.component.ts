@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ModelColorDetail } from 'src/app/models/details/modelColorDetail';
+import { ModelColorService } from 'src/app/services/concrete/model-color.service';
 
 @Component({
   selector: 'app-model-color-list',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModelColorListComponent implements OnInit {
 
-  constructor() { }
+  modelColorDetails: ModelColorDetail[] = [];
+  filterText: string = "";
+
+  constructor(private modelColorService: ModelColorService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getAllModelColorDetails();
   }
 
+  getAllModelColorDetails(): void {
+    this.modelColorService.getAllModelColorDetails().subscribe(response => {
+      this.modelColorDetails = response.data;
+    })
+  }
+
+  getModelColorDetailViewById(modelColorId: number): void {
+    this.router.navigate(["/admin/modelColors/view/" + modelColorId]);
+  }
 }

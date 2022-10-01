@@ -21,16 +21,16 @@ export class ModelService implements IModelService {
     return this.httpClient.get<SingleResponseModel<Model>>(path);
   }
 
-  getModelDetailsById(id: number): Observable<SingleResponseModel<ModelDetail>> {
-    const path = this.baseUrl + "getmodeldetailsbyid?id=" + id;
-    return this.httpClient.get<SingleResponseModel<ModelDetail>>(path);
-  }
 
   getAll(): Observable<ListResponseModel<Model>> {
     const path = this.baseUrl + 'getall';
     return this.httpClient.get<ListResponseModel<Model>>(path);
   }
 
+  getModelDetailsById(id: number): Observable<SingleResponseModel<ModelDetail>> {
+    const path = this.baseUrl + "getmodeldetailsbyid?id=" + id;
+    return this.httpClient.get<SingleResponseModel<ModelDetail>>(path);
+  }
   getAllModelDetails(): Observable<ListResponseModel<ModelDetail>> {
     const path = this.baseUrl + 'getallmodeldetails';
     return this.httpClient.get<ListResponseModel<ModelDetail>>(path);

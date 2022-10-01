@@ -39,6 +39,7 @@ import { CustomerRemoveComponent } from './components/admin/customer/customer-re
 import { ModelRemoveComponent } from './components/admin/model/model-remove/model-remove.component';
 import { RentalRemoveComponent } from './components/admin/rental/rental-remove/rental-remove.component';
 import { ModelColorListComponent } from './components/admin/modelColor/model-color-list/model-color-list.component';
+import { ModelColorAddComponent } from './components/admin/modelColor/model-color-add/model-color-add.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -83,6 +84,7 @@ const routes: Routes = [
       { path: "colors/add", component: ColorAddComponent },
       { path: "customers/add", component: CustomerAddComponent },
       { path: "models/add", component: ModelAddComponent },
+      { path: "modelcolors/add", component: ModelColorAddComponent },
       { path: "rentals/add", component: RentalAddComponent },
 
       { path: "brands/update/:brandId", component: BrandUpdateComponent },

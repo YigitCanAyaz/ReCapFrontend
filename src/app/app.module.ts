@@ -65,6 +65,14 @@ import { ModelColorListComponent } from './components/admin/modelColor/model-col
 import { ModelColorViewComponent } from './components/admin/modelColor/model-color-view/model-color-view.component';
 import { ModelColorUpdateComponent } from './components/admin/modelColor/model-color-update/model-color-update.component';
 import { ModelColorRemoveComponent } from './components/admin/modelColor/model-color-remove/model-color-remove.component';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
+
 
 @NgModule({
   declarations: [
@@ -135,10 +143,15 @@ import { ModelColorRemoveComponent } from './components/admin/modelColor/model-c
     ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right"
-    })
+    }),
+    PerfectScrollbarModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 @Component({
   selector: 'app-admin-layout',
@@ -14,8 +15,10 @@ export class AdminLayoutComponent implements OnInit {
   customerActive: boolean = false;
   colorActive: boolean = false;
   modelActive: boolean = false;
+  modelColorActive: boolean = false;
   rentalActive: boolean = false;
 
+  public config: PerfectScrollbarConfigInterface = {};
 
   constructor(private router: Router) { }
 
@@ -40,6 +43,7 @@ export class AdminLayoutComponent implements OnInit {
     this.customerActive = false;
     this.colorActive = false;
     this.modelActive = false;
+    this.modelColorActive = false;
     this.rentalActive = false;
 
 
@@ -61,6 +65,9 @@ export class AdminLayoutComponent implements OnInit {
         break;
       case 'models':
         this.modelActive = true;
+        break;
+      case 'modelColors':
+        this.modelColorActive = true;
         break;
       case 'rentals':
         this.rentalActive = true;

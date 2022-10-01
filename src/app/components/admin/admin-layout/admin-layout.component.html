@@ -177,7 +177,7 @@
   </nav>
   <div class="menu">
     <div class="main-menu">
-      <div class="scroll ps ps--active-y ps--scrolling-y">
+      <div class="ps" style="position: relative; max-width: 100%; max-height: 100%;" [perfectScrollbar]="config">
         <ul class="list-unstyled">
           <li [class]="checkActive(dashboardActivate)" (click)="setAndRemoveActive('')">
             <a routerLink="/admin">
@@ -203,6 +203,12 @@
               <span>Colors</span>
             </a>
           </li>
+          <li [class]="checkActive(rentalActive)" (click)="setAndRemoveActive('rentals')">
+            <a routerLink="/admin/rentals/list">
+              <i class="fa fa-folder-open" aria-hidden="true"></i>
+              <span>Rentals</span>
+            </a>
+          </li>
           <li [class]="checkActive(customerActive)" (click)="setAndRemoveActive('customers')">
             <a routerLink="/admin/customers/list">
               <i class="fa fa-user" aria-hidden="true"></i>
@@ -215,25 +221,13 @@
               <span>Models</span>
             </a>
           </li>
-          <li [class]="checkActive(modelActive)" (click)="setAndRemoveActive('modelColors')">
-            <a routerLink="/admin/modelColors/list">
+          <li [class]="checkActive(modelColorActive)" (click)="setAndRemoveActive('modelColors')">
+            <a routerLink="/admin/modelcolors/list">
               <i class="fa fa-paint-brush" aria-hidden="true"></i>
               <span>Model Colors</span>
             </a>
           </li>
-          <li [class]="checkActive(rentalActive)" (click)="setAndRemoveActive('rentals')">
-            <a routerLink="/admin/rentals/list">
-              <i class="fa fa-folder-open" aria-hidden="true"></i>
-              <span>Rentals</span>
-            </a>
-          </li>
         </ul>
-        <div class="ps__rail-x">
-          <div class="ps__thumb-x" tabindex="0"></div>
-        </div>
-        <div class="ps__rail-y">
-          <div class="ps__thumb-y" tabindex="0"></div>
-        </div>
       </div>
     </div>
   </div>

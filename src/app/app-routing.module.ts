@@ -38,6 +38,7 @@ import { ColorRemoveComponent } from './components/admin/color/color-remove/colo
 import { CustomerRemoveComponent } from './components/admin/customer/customer-remove/customer-remove.component';
 import { ModelRemoveComponent } from './components/admin/model/model-remove/model-remove.component';
 import { RentalRemoveComponent } from './components/admin/rental/rental-remove/rental-remove.component';
+import { ModelColorListComponent } from './components/admin/modelColor/model-color-list/model-color-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -68,6 +69,7 @@ const routes: Routes = [
       { path: "customers/list", component: CustomerListComponent },
       { path: "models/list", component: ModelListComponent },
       { path: "rentals/list", component: RentalListComponent },
+      { path: "modelcolors/list", component: ModelColorListComponent },
 
       { path: "brands/view/:brandId", component: BrandViewComponent },
       { path: "cars/view/:carId", component: CarViewComponent },

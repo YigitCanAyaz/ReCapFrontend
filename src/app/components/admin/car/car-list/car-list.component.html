@@ -51,7 +51,7 @@
               <td>{{carDetail.modelYear}}</td>
               <td>{{carDetail.colorName}}</td>
               <td>{{carDetail.dailyPrice}}</td>
-              <td>{{carDetail.description}}</td>
+              <td>{{carDetail.description | carDetailDescriptionFilterPipe}}</td>
             </tr>
           </tbody>
         </table>

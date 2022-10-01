@@ -69,6 +69,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { ModelColorDetailFilterPipePipe } from './pipes/model-color-detail-filter-pipe.pipe';
+import { CarDetailDescriptionFilterPipePipe } from './pipes/car-detail-description-filter-pipe.pipe';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -135,6 +136,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ModelColorUpdateComponent,
     ModelColorRemoveComponent,
     ModelColorDetailFilterPipePipe,
+    CarDetailDescriptionFilterPipePipe,
   ],
   imports: [
     BrowserModule,

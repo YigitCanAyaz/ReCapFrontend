@@ -43,9 +43,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let carDetail of carDetails | carDetailModelFilterPipe: filterText"
+            <tr *ngFor="let carDetail of carDetails | carDetailModelFilterPipe: filterText; let i = index"
               (click)="getCarDetailViewById(carDetail.id)">
-              <td><b>{{carDetail.id}}</b></td>
+              <td><b>{{i + 1}}</b></td>
               <td>{{carDetail.brandName}}</td>
               <td>{{carDetail.modelName}}</td>
               <td>{{carDetail.modelYear}}</td>

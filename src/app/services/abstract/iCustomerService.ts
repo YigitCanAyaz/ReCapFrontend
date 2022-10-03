@@ -11,4 +11,5 @@ export interface ICustomerService {
   getAllCustomerDetails(): Observable<ListResponseModel<CustomerDetail>>;
   getCustomerDetailsById(id: number): Observable<SingleResponseModel<CustomerDetail>>;
   add(customer: Customer): Observable<ResponseModel>;
+  update(customer: Customer): Observable<ResponseModel>;
 }

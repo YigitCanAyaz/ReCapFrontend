@@ -82,6 +82,11 @@ import { CarImageViewComponent } from './components/admin/carImage/car-image-vie
 import { CarImageListComponent } from './components/admin/carImage/car-image-list/car-image-list.component';
 import { CarImageRemoveComponent } from './components/admin/carImage/car-image-remove/car-image-remove.component';
 import { CarImageUpdateComponent } from './components/admin/carImage/car-image-update/car-image-update.component';
+import { UserOperationClaimAddComponent } from './components/admin/user-operation-claim/user-operation-claim-add/user-operation-claim-add.component';
+import { UserOperationClaimRemoveComponent } from './components/admin/user-operation-claim/user-operation-claim-remove/user-operation-claim-remove.component';
+import { UserOperationClaimViewComponent } from './components/admin/user-operation-claim/user-operation-claim-view/user-operation-claim-view.component';
+import { UserOperationClaimListComponent } from './components/admin/user-operation-claim/user-operation-claim-list/user-operation-claim-list.component';
+import { UserOperationClaimUpdateComponent } from './components/admin/user-operation-claim/user-operation-claim-update/user-operation-claim-update.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -161,6 +166,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CarImageListComponent,
     CarImageRemoveComponent,
     CarImageUpdateComponent,
+    UserOperationClaimAddComponent,
+    UserOperationClaimRemoveComponent,
+    UserOperationClaimViewComponent,
+    UserOperationClaimListComponent,
+    UserOperationClaimUpdateComponent,
   ],
   imports: [
     BrowserModule,

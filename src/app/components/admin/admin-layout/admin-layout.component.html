@@ -227,6 +227,18 @@
               <span>Users</span>
             </a>
           </li>
+          <li [class]="checkActive(operationClaimActive)" (click)="setAndRemoveActive('operationclaims')">
+            <a routerLink="/admin/operationclaims/list">
+              <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+              <span>Operation Claims</span>
+            </a>
+          </li>
+          <li [class]="checkActive(userOperationClaimActive)" (click)="setAndRemoveActive('useroperationclaims')">
+            <a routerLink="/admin/useroperationclaims/list">
+              <i class="fa fa-address-book" aria-hidden="true"></i>
+              <span>User Operation Claims</span>
+            </a>
+          </li>
           <li [class]="checkActive(modelActive)" (click)="setAndRemoveActive('models')">
             <a routerLink="/admin/models/list">
               <i class="fa fa-taxi" aria-hidden="true"></i>

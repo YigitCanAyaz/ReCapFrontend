@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CarDetail } from 'src/app/models/details/carDetail';
 import { CustomerDetail } from 'src/app/models/details/customerDetail';
+import { RentalDetail } from 'src/app/models/details/rentalDetail';
 import { CarService } from 'src/app/services/concrete/car.service';
 import { CustomerService } from 'src/app/services/concrete/customer.service';
 import { RentalService } from 'src/app/services/concrete/rental.service';
@@ -15,22 +16,34 @@ import { RentalService } from 'src/app/services/concrete/rental.service';
 })
 export class RentalUpdateComponent implements OnInit {
 
+
+  rentalDetail: RentalDetail;
   rentalUpdateForm: FormGroup;
   carDetails: CarDetail[] = [];
   customerDetails: CustomerDetail[] = [];
 
-  constructor(private rentalService: RentalService, private carService: CarService, private customerService: CustomerService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }
+  constructor(private rentalService: RentalService, private carService: CarService, private customerService: CustomerService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.createRentalUpdateForm();
-    this.getAllCarDetails();
-    this.getAllCustomerDetails();
+    this.activatedRoute.params.subscribe(params => {
+      if (params["rentalId"]) {
+        this.getRentalDetailsById(params["rentalId"]);
+      }
+    });
+  }
+
+  getRentalDetailsById(id: number): void {
+    this.rentalService.getRentalDetailsById(id).subscribe(response => {
+      this.rentalDetail = response.data;
+      this.getAllCarDetails();
+    })
   }
 
   createRentalUpdateForm(): void {
     this.rentalUpdateForm = this.formBuilder.group({
-      carId: ["", [Validators.required]],
-      customerId: ["", [Validators.required]]
+      id: [this.rentalDetail ? this.rentalDetail.id : ""],
+      carId: [this.rentalDetail ? this.rentalDetail.carId : "", [Validators.required]],
+      customerId: [this.rentalDetail ? this.rentalDetail.customerId : "", [Validators.required]]
     });
   }
 
@@ -55,12 +68,14 @@ export class RentalUpdateComponent implements OnInit {
   getAllCarDetails(): void {
     this.carService.getAllCarDetails().subscribe(response => {
       this.carDetails = response.data;
+      this.getAllCustomerDetails();
     })
   }
 
   getAllCustomerDetails(): void {
     this.customerService.getAllCustomerDetails().subscribe(response => {
       this.customerDetails = response.data;
+      this.createRentalUpdateForm();
     })
   }
 }

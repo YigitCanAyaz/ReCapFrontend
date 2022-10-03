@@ -8,4 +8,5 @@ export interface IColorService {
   getAll(): Observable<ListResponseModel<Color>>;
   getById(id: number): Observable<SingleResponseModel<Color>>;
   add(color: Color): Observable<ResponseModel>;
+  update(color: Color): Observable<ResponseModel>;
 }

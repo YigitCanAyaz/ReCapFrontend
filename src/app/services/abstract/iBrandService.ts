@@ -9,4 +9,5 @@ export interface IBrandService {
   getById(id: number): Observable<SingleResponseModel<Brand>>;
   getAll(): Observable<ListResponseModel<Brand>>;
   add(brand: Brand): Observable<ResponseModel>;
+  update(brand: Brand): Observable<ResponseModel>;
 }

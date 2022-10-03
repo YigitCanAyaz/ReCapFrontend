@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ModelColorDetail } from 'src/app/models/details/modelColorDetail';
+import { ModelColorService } from 'src/app/services/concrete/model-color.service';
 
 @Component({
   selector: 'app-model-color-view',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModelColorViewComponent implements OnInit {
 
-  constructor() { }
+  modelColorDetail: ModelColorDetail;
+
+  constructor(private modelColorService: ModelColorService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      if (params["modelColorId"]) {
+        this.getModelColorDetailsById(params["modelColorId"]);
+      }
+    });
+  }
+
+  getModelColorDetailsById(id: number): void {
+    this.modelColorService.getModelColorDetailsById(id).subscribe(response => {
+      this.modelColorDetail = response.data;
+    })
   }
 
 }

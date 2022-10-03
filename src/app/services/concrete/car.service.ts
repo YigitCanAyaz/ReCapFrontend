@@ -72,7 +72,7 @@ export class CarService implements ICarService {
       return path;
     }
     else {
-      const path = this.imageUrl + carDetail.imagePath;
+      const path = this.imageUrl + carDetail.imagePath[0];
       return path;
     }
   }
@@ -80,5 +80,10 @@ export class CarService implements ICarService {
   add(car: Car): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", car);
   }
+
+  update(car: Car): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "update", car);
+  }
+
 
 }

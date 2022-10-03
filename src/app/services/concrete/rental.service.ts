@@ -52,4 +52,9 @@ export class RentalService implements IRentalService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", rental);
   }
 
+  update(rental: Rental): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "update", rental);
+  }
+
+
 }

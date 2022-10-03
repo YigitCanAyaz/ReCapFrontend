@@ -15,7 +15,6 @@ import { ModelColorService } from 'src/app/services/concrete/model-color.service
 export class CarAddComponent implements OnInit {
 
   carAddForm: FormGroup;
-
   modelColorDetails: ModelColorDetail[] = [];
 
   constructor(private carService: CarService, private modelColorService: ModelColorService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }

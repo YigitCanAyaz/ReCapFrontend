@@ -28,4 +28,8 @@ export class BrandService implements IBrandService {
   add(brand: Brand): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", brand);
   }
+
+  update(brand: Brand): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "update", brand);
+  }
 }

@@ -12,4 +12,5 @@ export interface IRentalService {
   getRentalDetailsById(id: number): Observable<SingleResponseModel<RentalDetail>>;
 
   add(rental: Rental): Observable<ResponseModel>;
+  update(rental: Rental): Observable<ResponseModel>;
 }

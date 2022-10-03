@@ -1,3 +1,4 @@
+import { ICarImageService } from './../abstract/iCarImageService';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,7 +11,7 @@ import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 @Injectable({
   providedIn: 'root'
 })
-export class CarImageService {
+export class CarImageService implements ICarImageService {
 
   baseUrl: string = 'https://localhost:44343/api/carimages/';
   imageUrl = "https://localhost:44343";
@@ -29,6 +30,10 @@ export class CarImageService {
 
   add(carImage: CarImage): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", carImage);
+  }
+
+  update(carImage: CarImage): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "update", carImage);
   }
 
   getCarImageDetailsById(id: number): Observable<SingleResponseModel<CarImageDetail>> {

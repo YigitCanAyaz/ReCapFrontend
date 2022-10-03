@@ -22,7 +22,6 @@ export class CarImageListComponent implements OnInit {
   getAllCarImageDetails(): void {
     this.carImageService.getAllCarImageDetails().subscribe(response => {
       this.carImageDetails = response.data;
-      console.log(response.data);
     })
   }
 

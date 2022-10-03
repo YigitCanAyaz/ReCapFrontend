@@ -93,6 +93,7 @@ import { OperationClaimUpdateComponent } from './components/admin/operation-clai
 import { OperationClaimViewComponent } from './components/admin/operation-claim/operation-claim-view/operation-claim-view.component';
 import { OperationClaimListComponent } from './components/admin/operation-claim/operation-claim-list/operation-claim-list.component';
 import { OperationClaimFilterPipePipe } from './pipes/operation-claim-filter-pipe.pipe';
+import { UserOperationClaimDetailFilterPipePipe } from './pipes/user-operation-claim-detail-filter-pipe.pipe';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -183,6 +184,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     OperationClaimViewComponent,
     OperationClaimListComponent,
     OperationClaimFilterPipePipe,
+    UserOperationClaimDetailFilterPipePipe,
   ],
   imports: [
     BrowserModule,

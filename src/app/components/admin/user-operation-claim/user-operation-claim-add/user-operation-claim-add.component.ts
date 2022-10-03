@@ -1,12 +1,12 @@
+import { UserForInfoDetail } from './../../../../models/details/userForInfoDetail';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Color } from 'src/app/models/entities/color';
-import { Model } from 'src/app/models/entities/model';
-import { ColorService } from 'src/app/services/concrete/color.service';
-import { ModelService } from 'src/app/services/concrete/model.service';
+import { OperationClaim } from 'src/app/models/entities/operationClaim';
+import { OperationClaimService } from 'src/app/services/concrete/operation-claim.service';
 import { UserOperationClaimService } from 'src/app/services/concrete/user-operation-claim.service';
+import { UserService } from 'src/app/services/concrete/user.service';
 
 @Component({
   selector: 'app-user-operation-claim-add',
@@ -16,15 +16,15 @@ import { UserOperationClaimService } from 'src/app/services/concrete/user-operat
 export class UserOperationClaimAddComponent implements OnInit {
 
   userOperationClaimAddForm: FormGroup;
-  users: Model[] = [];
-  operationClaims: Color[] = [];
+  users: UserForInfoDetail[] = [];
+  operationClaims: OperationClaim[] = [];
 
-  constructor(private userOperationClaimService: UserOperationClaimService, private userService: ModelService, private operationClaimService: ColorService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }
+  constructor(private userOperationClaimService: UserOperationClaimService, private userService: UserService, private operationClaimService: OperationClaimService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
     this.createUserOperationClaimAddForm();
-    this.getAllModels();
-    this.getAllColors();
+    this.getAllUsers();
+    this.getAllOperationClaims();
   }
 
   createUserOperationClaimAddForm(): void {
@@ -50,13 +50,13 @@ export class UserOperationClaimAddComponent implements OnInit {
     }
   }
 
-  getAllModels(): void {
+  getAllUsers(): void {
     this.userService.getAll().subscribe(response => {
       this.users = response.data;
     })
   }
 
-  getAllColors(): void {
+  getAllOperationClaims(): void {
     this.operationClaimService.getAll().subscribe(response => {
       this.operationClaims = response.data;
     })

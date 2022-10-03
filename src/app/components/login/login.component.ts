@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(response => {
         this.toastrService.info("Başarıyla giriş yaptınız, admin sayfasına yönlendiriliyorsunuz..");
-        this.router.navigate(["/admin"]);
         localStorage.setItem("token", response.data.token);
+        this.router.navigate(["/admin"]);
       }, responseError => {
         this.toastrService.error(responseError.error);
       });

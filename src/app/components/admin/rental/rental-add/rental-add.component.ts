@@ -1,4 +1,11 @@
+import { CustomerDetail } from './../../../../models/details/customerDetail';
+import { CarDetail } from './../../../../models/details/carDetail';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { CarService } from 'src/app/services/concrete/car.service';
+import { CustomerService } from 'src/app/services/concrete/customer.service';
 import { RentalService } from 'src/app/services/concrete/rental.service';
 
 @Component({
@@ -9,28 +16,30 @@ import { RentalService } from 'src/app/services/concrete/rental.service';
 export class RentalAddComponent implements OnInit {
 
   rentalAddForm: FormGroup;
-  models: Model[] = [];
-  colors: Color[] = [];
+  carDetails: CarDetail[] = [];
+  customerDetails: CustomerDetail[] = [];
 
-  constructor(private rentalService: RentalService, private modelService: ModelService, private colorService: ColorService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }
+  constructor(private rentalService: RentalService, private carService: CarService, private customerService: CustomerService, private formBuilder: FormBuilder, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
     this.createRentalAddForm();
-    this.getAllModels();
-    this.getAllColors();
+    this.getAllCarDetails();
+    this.getAllCustomerDetails();
   }
 
   createRentalAddForm(): void {
     this.rentalAddForm = this.formBuilder.group({
-      modelId: ["", [Validators.required]],
-      colorId: ["", [Validators.required]]
+      carId: ["", [Validators.required]],
+      customerId: ["", [Validators.required]]
     });
   }
 
   addRental(): void {
     console.log(this.rentalAddForm.value);
+    let rentalModel = Object.assign({}, this.rentalAddForm.value);
+    rentalModel.rentDate = new Date();
     if (this.rentalAddForm.valid) {
-      this.rentalService.add(this.rentalAddForm.value).subscribe(response => {
+      this.rentalService.add(rentalModel).subscribe(response => {
         this.toastrService.info(response.message);
         this.router.navigate(["/admin/rentals/list"]);
       }, responseError => {
@@ -43,15 +52,15 @@ export class RentalAddComponent implements OnInit {
     }
   }
 
-  getAllModels(): void {
-    this.modelService.getAll().subscribe(response => {
-      this.models = response.data;
+  getAllCarDetails(): void {
+    this.carService.getAllCarDetails().subscribe(response => {
+      this.carDetails = response.data;
     })
   }
 
-  getAllColors(): void {
-    this.colorService.getAll().subscribe(response => {
-      this.colors = response.data;
+  getAllCustomerDetails(): void {
+    this.customerService.getAllCustomerDetails().subscribe(response => {
+      this.customerDetails = response.data;
     })
   }
 }

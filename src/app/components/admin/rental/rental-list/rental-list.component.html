@@ -39,7 +39,8 @@
               <th scope="col">Year</th>
               <th scope="col">First Name</th>
               <th scope="col">Last Name</th>
-              <th scope="col">Rent Date</th>
+              <th scope="col">Rent Hour Date</th>
+              <th scope="col">Rent Day Date</th>
               <th scope="col">Return Date</th>
             </tr>
           </thead>
@@ -51,9 +52,10 @@
               <td>{{rentalDetail.modelName}}</td>
               <td>{{rentalDetail.modelYear}}</td>
               <td>{{rentalDetail.firstName}}</td>
-              <td>{{rentalDetail.lastName}</td>
-              <td>{{rentalDetail.rentDate}}</td>
-              <td>{{rentalDetail.returnDate}}</td>
+              <td>{{rentalDetail.lastName}}</td>
+              <td>{{rentalDetail.rentDate | date: 'HH:mm'}}</td>
+              <td>{{rentalDetail.rentDate | date: 'dd/MM/yyyy'}}</td>
+              <td>{{rentalDetail.returnDate | date}}</td>
             </tr>
           </tbody>
         </table>

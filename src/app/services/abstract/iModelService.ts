@@ -8,6 +8,7 @@ import { SingleResponseModel } from "src/app/models/singleResponseModel";
 export interface IModelService {
   getAll(): Observable<ListResponseModel<Model>>;
   getById(id: number): Observable<SingleResponseModel<Model>>;
+
   getAllModelDetails(): Observable<ListResponseModel<ModelDetail>>;
   getModelDetailsById(id: number): Observable<SingleResponseModel<ModelDetail>>;
   add(model: Model): Observable<ResponseModel>;

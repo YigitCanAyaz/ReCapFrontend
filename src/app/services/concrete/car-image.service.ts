@@ -13,6 +13,7 @@ import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 export class CarImageService {
 
   baseUrl: string = 'https://localhost:44343/api/carimages/';
+  imageUrl = "https://localhost:44343";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -38,5 +39,16 @@ export class CarImageService {
   getAllCarImageDetails(): Observable<ListResponseModel<CarImageDetail>> {
     const path = this.baseUrl + 'getallcarimagedetails';
     return this.httpClient.get<ListResponseModel<CarImageDetail>>(path);
+  }
+
+  getCarImage(carImageDetail: CarImageDetail): string {
+    if (carImageDetail.imagePath.length === 0) {
+      const path = this.imageUrl + "/Images/default.png";
+      return path;
+    }
+    else {
+      const path = this.imageUrl + carImageDetail.imagePath;
+      return path;
+    }
   }
 }

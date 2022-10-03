@@ -65,7 +65,7 @@ export class AdminLayoutComponent implements OnInit {
       case 'cars':
         this.carActive = true;
         break;
-      case 'carImages':
+      case 'carimages':
         this.carImageActive = true;
         break;
       case 'colors':

@@ -1,3 +1,6 @@
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from './../../../../services/concrete/user.service';
+import { UserForInfoDetail } from './../../../../models/details/userForInfoDetail';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserViewComponent implements OnInit {
 
-  constructor() { }
+  user: UserForInfoDetail;
+
+  constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      if (params["userId"]) {
+        this.getUserById(params["userId"]);
+      }
+    });
+  }
+
+  getUserById(id: number): void {
+    this.userService.getById(id).subscribe(response => {
+      this.user = response.data;
+    })
   }
 
 }

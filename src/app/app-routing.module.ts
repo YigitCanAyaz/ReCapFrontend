@@ -1,3 +1,5 @@
+import { UserOperationClaimRemoveComponent } from './components/admin/user-operation-claim/user-operation-claim-remove/user-operation-claim-remove.component';
+import { OperationClaimRemoveComponent } from './components/admin/operation-claim/operation-claim-remove/operation-claim-remove.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { LoginGuard } from './guards/login.guard';
 import { SiteLayoutComponent } from './components/site/site-layout/site-layout.component';
@@ -51,6 +53,15 @@ import { CarImageViewComponent } from './components/admin/carImage/car-image-vie
 import { CarImageAddComponent } from './components/admin/carImage/car-image-add/car-image-add.component';
 import { CarImageUpdateComponent } from './components/admin/carImage/car-image-update/car-image-update.component';
 import { CarImageRemoveComponent } from './components/admin/carImage/car-image-remove/car-image-remove.component';
+import { OperationClaimListComponent } from './components/admin/operation-claim/operation-claim-list/operation-claim-list.component';
+import { UserOperationClaimListComponent } from './components/admin/user-operation-claim/user-operation-claim-list/user-operation-claim-list.component';
+import { OperationClaimViewComponent } from './components/admin/operation-claim/operation-claim-view/operation-claim-view.component';
+import { UserOperationClaimViewComponent } from './components/admin/user-operation-claim/user-operation-claim-view/user-operation-claim-view.component';
+import { OperationClaimAddComponent } from './components/admin/operation-claim/operation-claim-add/operation-claim-add.component';
+import { UserOperationClaimAddComponent } from './components/admin/user-operation-claim/user-operation-claim-add/user-operation-claim-add.component';
+import { OperationClaimUpdateComponent } from './components/admin/operation-claim/operation-claim-update/operation-claim-update.component';
+import { UserOperationClaimUpdateComponent } from './components/admin/user-operation-claim/user-operation-claim-update/user-operation-claim-update.component';
+import { UserRemoveComponent } from './components/admin/user/user-remove/user-remove.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -84,6 +95,8 @@ const routes: Routes = [
       { path: "rentals/list", component: RentalListComponent },
       { path: "modelcolors/list", component: ModelColorListComponent },
       { path: "users/list", component: UserListComponent },
+      { path: "operationclaims/list", component: OperationClaimListComponent },
+      { path: "useroperationclaims/list", component: UserOperationClaimListComponent },
 
       { path: "brands/view/:brandId", component: BrandViewComponent },
       { path: "cars/view/:carId", component: CarViewComponent },
@@ -94,6 +107,8 @@ const routes: Routes = [
       { path: "rentals/view/:rentalId", component: RentalViewComponent },
       { path: "modelcolors/view/:modelColorId", component: ModelColorViewComponent },
       { path: "users/view/:userId", component: UserViewComponent },
+      { path: "operationclaims/view/:operationClaimId", component: OperationClaimViewComponent },
+      { path: "useroperationclaims/view/:userOperationClaimId", component: UserOperationClaimViewComponent },
 
       { path: "brands/add", component: BrandAddComponent },
       { path: "cars/add", component: CarAddComponent },
@@ -104,6 +119,8 @@ const routes: Routes = [
       { path: "modelcolors/add", component: ModelColorAddComponent },
       { path: "rentals/add", component: RentalAddComponent },
       { path: "users/add", component: UserAddComponent },
+      { path: "operationclaims/add", component: OperationClaimAddComponent },
+      { path: "useroperationclaims/add", component: UserOperationClaimAddComponent },
 
 
       { path: "brands/update/:brandId", component: BrandUpdateComponent },
@@ -115,6 +132,8 @@ const routes: Routes = [
       { path: "rentals/update/:rentalId", component: RentalUpdateComponent },
       { path: "modelcolors/update/:modelColorId", component: ModelColorUpdateComponent },
       { path: "users/update/:userId", component: UserUpdateComponent },
+      { path: "operationclaims/update/:operationClaimId", component: OperationClaimUpdateComponent },
+      { path: "useroperationclaims/update/:userOperationClaimId", component: UserOperationClaimUpdateComponent },
 
       { path: "brands/remove/:brandId", component: BrandRemoveComponent },
       { path: "cars/remove/:carId", component: CarRemoveComponent },
@@ -123,6 +142,9 @@ const routes: Routes = [
       { path: "customers/remove/:customerId", component: CustomerRemoveComponent },
       { path: "models/remove/:modelId", component: ModelRemoveComponent },
       { path: "rentals/remove/:rentalId", component: RentalRemoveComponent },
+      { path: "users/remove/:userId", component: UserRemoveComponent },
+      { path: "operationclaims/remove/:operationClaimId", component: OperationClaimRemoveComponent },
+      { path: "useroperationclaims/remove/:userOperationClaimId", component: UserOperationClaimRemoveComponent },
 
     ]
   },

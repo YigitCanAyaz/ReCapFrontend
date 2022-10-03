@@ -12,7 +12,7 @@ import { IOperationClaimService } from '../abstract/iOperationClaimService';
 })
 export class OperationClaimService implements IOperationClaimService {
 
-  baseUrl: string = 'https://localhost:44343/api/operationClaims/';
+  baseUrl: string = 'https://localhost:44343/api/operationclaims/';
 
   constructor(private httpClient: HttpClient) { }
 

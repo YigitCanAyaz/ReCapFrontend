@@ -78,10 +78,10 @@ export class AdminLayoutComponent implements OnInit {
         this.userActive = true;
         break;
       case 'operationclaims':
-        this.userActive = true;
+        this.operationClaimActive = true;
         break;
       case 'useroperationclaims':
-        this.userActive = true;
+        this.userOperationClaimActive = true;
         break;
       case 'models':
         this.modelActive = true;

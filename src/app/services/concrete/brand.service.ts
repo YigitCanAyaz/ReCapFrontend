@@ -32,4 +32,8 @@ export class BrandService implements IBrandService {
   update(brand: Brand): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "update", brand);
   }
+
+  delete(brand: Brand): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "delete", brand);
+  }
 }

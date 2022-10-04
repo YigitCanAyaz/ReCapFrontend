@@ -10,4 +10,5 @@ export interface IBrandService {
   getAll(): Observable<ListResponseModel<Brand>>;
   add(brand: Brand): Observable<ResponseModel>;
   update(brand: Brand): Observable<ResponseModel>;
+  delete(brand: Brand): Observable<ResponseModel>;
 }

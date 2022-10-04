@@ -34,4 +34,8 @@ export class ColorService implements IColorService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "update", color);
   }
 
+  delete(color: Color): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "delete", color);
+  }
+
 }

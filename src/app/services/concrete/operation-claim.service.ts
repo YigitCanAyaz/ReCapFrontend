@@ -34,4 +34,8 @@ export class OperationClaimService implements IOperationClaimService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "update", operationClaim);
   }
 
+  delete(operationClaim: OperationClaim): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "delete", operationClaim);
+  }
+
 }

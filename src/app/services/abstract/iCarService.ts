@@ -7,8 +7,9 @@ import { ResponseModel } from 'src/app/models/responseModel';
 
 export interface ICarService {
   getAll(): Observable<ListResponseModel<Car>>;
-  add(car: Car): Observable<ResponseModel>
-  update(car: Car): Observable<ResponseModel>
+  add(car: Car): Observable<ResponseModel>;
+  update(car: Car): Observable<ResponseModel>;
+  delete(car: Car): Observable<ResponseModel>;
   getById(id: number): Observable<SingleResponseModel<Car>>;
   getCarsByModelId(modelId: number): Observable<ListResponseModel<Car>>;
   getCarsByColorId(colorId: number): Observable<ListResponseModel<Car>>;

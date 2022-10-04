@@ -10,6 +10,7 @@ export interface IUserOperationClaimService {
   getById(id: number): Observable<SingleResponseModel<UserOperationClaim>>;
   add(userOperationClaim: UserOperationClaim): Observable<ResponseModel>;
   update(userOperationClaim: UserOperationClaim): Observable<ResponseModel>;
+  delete(userOperationClaim: UserOperationClaim): Observable<ResponseModel>;
 
   getAllUserOperationClaimDetails(): Observable<ListResponseModel<UserOperationClaimDetail>>;
   getUserOperationClaimDetailsById(id: number): Observable<SingleResponseModel<UserOperationClaimDetail>>;

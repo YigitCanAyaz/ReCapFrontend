@@ -32,6 +32,10 @@ export class CarImageService implements ICarImageService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", carImage);
   }
 
+  delete(carImage: CarImage): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "delete", carImage);
+  }
+
   update(carImage: CarImage): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "update", carImage);
   }

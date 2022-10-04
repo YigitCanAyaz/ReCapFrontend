@@ -13,4 +13,5 @@ export interface IRentalService {
 
   add(rental: Rental): Observable<ResponseModel>;
   update(rental: Rental): Observable<ResponseModel>;
+  delete(rental: Rental): Observable<ResponseModel>;
 }

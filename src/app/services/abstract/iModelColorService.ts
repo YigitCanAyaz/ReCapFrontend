@@ -10,6 +10,7 @@ export interface IModelColorService {
   getById(id: number): Observable<SingleResponseModel<ModelColor>>;
   add(modelColor: ModelColor): Observable<ResponseModel>;
   update(modelColor: ModelColor): Observable<ResponseModel>;
+  delete(modelColor: ModelColor): Observable<ResponseModel>;
   getModelColorDetailsById(id: number): Observable<SingleResponseModel<ModelColorDetail>>;
   getAllModelColorDetails(): Observable<ListResponseModel<ModelColorDetail>>;
 }

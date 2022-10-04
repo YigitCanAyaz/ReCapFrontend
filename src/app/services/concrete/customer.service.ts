@@ -45,4 +45,8 @@ export class CustomerService implements ICustomerService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "update", customer);
   }
 
+  delete(customer: Customer): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "delete", customer);
+  }
+
 }

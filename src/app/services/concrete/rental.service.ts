@@ -56,5 +56,9 @@ export class RentalService implements IRentalService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "update", rental);
   }
 
+  delete(rental: Rental): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "delete", rental);
+  }
+
 
 }

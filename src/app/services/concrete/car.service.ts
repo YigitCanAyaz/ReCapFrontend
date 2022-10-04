@@ -85,5 +85,9 @@ export class CarService implements ICarService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "update", car);
   }
 
+  delete(car: Car): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "delete", car);
+  }
+
 
 }

@@ -13,4 +13,5 @@ export interface IModelService {
   getModelDetailsById(id: number): Observable<SingleResponseModel<ModelDetail>>;
   add(model: Model): Observable<ResponseModel>;
   update(model: Model): Observable<ResponseModel>;
+  delete(model: Model): Observable<ResponseModel>;
 }

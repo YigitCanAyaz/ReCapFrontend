@@ -40,4 +40,8 @@ export class ModelService implements IModelService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", model);
   }
 
+  update(model: Model): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "update", model);
+  }
+
 }

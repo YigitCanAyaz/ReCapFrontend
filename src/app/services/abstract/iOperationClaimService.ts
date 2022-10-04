@@ -8,4 +8,5 @@ export interface IOperationClaimService {
   getAll(): Observable<ListResponseModel<OperationClaim>>;
   getById(id: number): Observable<SingleResponseModel<OperationClaim>>;
   add(operationClaim: OperationClaim): Observable<ResponseModel>;
+  update(operationClaim: OperationClaim): Observable<ResponseModel>;
 }

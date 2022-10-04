@@ -27,7 +27,7 @@
       <div class="card-body">
         <form [formGroup]="userOperationClaimAddForm" (ngSubmit)="addUserOperationClaim()">
           <div class="form-group">
-            <label for="userId">Model</label>
+            <label for="userId">User</label>
             <select formControlName="userId" id="userId" class="form-control">
               <option label="&nbsp;">&nbsp;</option>
               <option [ngValue]="user.id" *ngFor="let user of users">{{user.firstName + " " + user.lastName + " - (" +
@@ -35,7 +35,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="operationClaimId">Color</label>
+            <label for="operationClaimId">Operation Claim</label>
             <select formControlName="operationClaimId" id="operationClaimId" class="form-control">
               <option label="&nbsp;">&nbsp;</option>
               <option [ngValue]="operationClaim.id" *ngFor="let operationClaim of operationClaims">

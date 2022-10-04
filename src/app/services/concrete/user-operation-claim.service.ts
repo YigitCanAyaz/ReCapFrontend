@@ -31,6 +31,10 @@ export class UserOperationClaimService implements IUserOperationClaimService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", userOperationClaim);
   }
 
+  update(userOperationClaim: UserOperationClaim): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "update", userOperationClaim);
+  }
+
   getUserOperationClaimDetailsById(id: number): Observable<SingleResponseModel<UserOperationClaimDetail>> {
     const path = this.baseUrl + "getuseroperationclaimdetailsbyid?id=" + id;
     return this.httpClient.get<SingleResponseModel<UserOperationClaimDetail>>(path);

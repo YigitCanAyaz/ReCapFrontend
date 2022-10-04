@@ -86,7 +86,7 @@ export class AdminLayoutComponent implements OnInit {
       case 'models':
         this.modelActive = true;
         break;
-      case 'modelColors':
+      case 'modelcolors':
         this.modelColorActive = true;
         break;
       case 'rentals':

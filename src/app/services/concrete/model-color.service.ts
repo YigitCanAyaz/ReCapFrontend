@@ -31,6 +31,10 @@ export class ModelColorService implements IModelColorService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", modelColor);
   }
 
+  update(modelColor: ModelColor): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "update", modelColor);
+  }
+
   getModelColorDetailsById(id: number): Observable<SingleResponseModel<ModelColorDetail>> {
     const path = this.baseUrl + "getmodelcolordetailsbyid?id=" + id;
     return this.httpClient.get<SingleResponseModel<ModelColorDetail>>(path);

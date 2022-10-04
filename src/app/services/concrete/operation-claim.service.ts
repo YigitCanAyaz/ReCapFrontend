@@ -30,4 +30,8 @@ export class OperationClaimService implements IOperationClaimService {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", operationClaim);
   }
 
+  update(operationClaim: OperationClaim): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.baseUrl + "update", operationClaim);
+  }
+
 }

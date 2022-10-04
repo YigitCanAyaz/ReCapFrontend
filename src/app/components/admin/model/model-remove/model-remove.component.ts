@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Model } from 'src/app/models/entities/model';
+import { ModelService } from 'src/app/services/concrete/model.service';
 
 @Component({
   selector: 'app-model-remove',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModelRemoveComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modelService: ModelService, private activatedRoute: ActivatedRoute, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      if (params["modelId"]) {
+        this.getModelById(params["modelId"]);
+      }
+    });
+  }
+
+  getModelById(id: number): void {
+    this.modelService.getById(id).subscribe(response => {
+      this.removeModel(response.data);
+    })
+  }
+
+  removeModel(model: Model): void {
+    this.modelService.delete(model).subscribe(response => {
+      this.toastrService.warning(response.message);
+      this.router.navigate(['/admin/models/list']);
+    });
   }
 
 }

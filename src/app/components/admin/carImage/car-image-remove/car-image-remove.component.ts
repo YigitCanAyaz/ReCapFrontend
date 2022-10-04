@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { CarImage } from 'src/app/models/entities/carImage';
+import { CarImageService } from 'src/app/services/concrete/car-image.service';
 
 @Component({
   selector: 'app-car-image-remove',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarImageRemoveComponent implements OnInit {
 
-  constructor() { }
+  constructor(private carImageService: CarImageService, private activatedRoute: ActivatedRoute, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      if (params["carImageId"]) {
+        this.getCarImageById(params["carImageId"]);
+      }
+    });
+  }
+
+  getCarImageById(id: number): void {
+    this.carImageService.getById(id).subscribe(response => {
+      this.removeCarImage(response.data);
+    })
+  }
+
+  removeCarImage(carImage: CarImage): void {
+    this.carImageService.delete(carImage).subscribe(response => {
+      this.toastrService.warning(response.message);
+      this.router.navigate(['/admin/carImages/list']);
+    });
   }
 
 }

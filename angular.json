@@ -36,6 +36,7 @@
               "./src/assets/css/vendor/select2.min.css",
               "./src/assets/css/vendor/select2-bootstrap.min.css",
               "./src/assets/css/vendor/dropzone.min.css",
+              "./src/assets/css/vendor/video-js.css",
               "./src/assets/css/vendor/perfect-scrollbar.css",
               "./src/assets/css/vendor/cropper.min.css",
               "./src/assets/css/vendor/bootstrap-tagsinput.css",
@@ -44,8 +45,8 @@
               "./src/assets/css/vendor/nouislider.min.css",
               "./src/assets/css/vendor/bootstrap-datepicker3.min.css",
               "./src/assets/css/vendor/component-custom-switch.min.css",
-              "./src/assets/css/main.css",
-              "./src/assets/css/dore.light.bluenavy.min.css"
+              "./src/assets/css/dore.light.bluenavy.min.css",
+              "./src/assets/css/main.css"
             ],
             "scripts": [
               "./src/assets/js/vendor/jquery-3.3.1.min.js",
@@ -55,6 +56,7 @@
               "./src/assets/js/vendor/bootstrap-notify.min.js",
               "./src/assets/js/vendor/perfect-scrollbar.min.js",
               "./src/assets/js/vendor/mousetrap.min.js",
+              "./src/assets/js/vendor/owl.carousel.min.js",
               "./src/assets/js/vendor/select2.full.js",
               "./src/assets/js/vendor/dropzone.min.js",
               "./src/assets/js/vendor/bootstrap-tagsinput.min.js",
@@ -66,6 +68,11 @@
               "./src/assets/js/dore-plugins/select.from.library.js",
               "./src/assets/js/vendor/datatables.min.js",
               "./src/assets/js/vendor/bootstrap-tagsinput.min.js",
+              "./src/assets/js/vendor/landing-page/headroom.min.js",
+              "./src/assets/js/vendor/landing-page/jQuery.headroom.js",
+              "./src/assets/js/vendor/landing-page/jquery.scrollTo.min.js",
+              "./src/assets/js/vendor/landing-page/jquery.autoellipsis.js",
+              "./src/assets/js/dore.scripts.landingpage.js",
               "./src/assets/js/dore.script.js",
               "./src/assets/js/scripts.single.theme.js"
             ]

@@ -36,7 +36,7 @@ export class CardItemsComponent implements OnInit {
 
   getAllModelLength(): void {
     this.modelService.getAllModelLength().subscribe(response => {
-      this.brandLength = response.data;
+      this.modelLength = response.data;
     });
   }
 

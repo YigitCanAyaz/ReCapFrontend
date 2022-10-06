@@ -45,7 +45,7 @@
               "./src/assets/css/vendor/nouislider.min.css",
               "./src/assets/css/vendor/bootstrap-datepicker3.min.css",
               "./src/assets/css/vendor/component-custom-switch.min.css",
-              "./src/assets/css/dore.light.bluenavy.min.css",
+              "./src/assets/css/dore.light.bluenavy.css",
               "./src/assets/css/main.css"
             ],
             "scripts": [

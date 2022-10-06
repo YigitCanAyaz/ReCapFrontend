@@ -28,7 +28,7 @@
       </ul>
     </div>
     <div class="main-container">
-      <nav class="landing-page-nav">
+      <nav class="landing-page-nav headroom headroom--not-bottom headroom--pinned headroom--top">
         <div class="container d-flex align-items-center justify-content-between"><a
             class="navbar-logo pull-left scrollTo" href="#home"><span class="white"></span> <span
               class="dark"></span></a>
@@ -47,24 +47,39 @@
         <div class="section home">
           <div class="container">
             <div class="row home-row">
-              <div class="col-12 d-block d-md-none"><a target="_blank" href="/Dashboard.Default.html"><img
-                    alt="mobile hero" class="mobile-hero"
-                    src="../../../../assets/img/landing-page/home-hero-mobile.png"></a></div>
               <div class="col-12 col-xl-4 col-lg-5 col-md-6">
                 <div class="home-text">
-                  <div class="display-1">MAGIC IS IN<br>THE DETAILS</div>
-                  <p class="white mb-5">Dore is the combination of good design, quality code and attention for
-                    details.<br><br>We used same design language for components, layouts, apps and other parts of the
-                    template.<br><br>Hope you enjoy it!</p><a class="btn btn-secondary btn-xl mr-2 mb-2" target="_blank"
-                    href="/Dashboard.Default.html">VIEW NOW <i class="simple-icon-arrow-right"></i></a>
+                  <div class="display-1">RENT A CAR<br>IN 5 MINUTES!</div>
+                  <p class="white mb-5">
+                    <i class="fa fa-check-circle-o fa-lg mr-2" aria-hidden="true"></i>
+                    Compare and book deals for cheapest prices<br /><br />
+                    <i class="fa fa-check-circle-o fa-lg mr-2" aria-hidden="true"></i>
+                    Delivery and collection to/from airport, hotel<br /><br />
+                    <i class="fa fa-check-circle-o fa-lg mr-2" aria-hidden="true"></i>
+                    No booking fees, no credit card charges*<br /><br />
+                    <i class="fa fa-check-circle-o fa-lg mr-2" aria-hidden="true"></i>
+                    Find great value rental rates and exclusive specials
+                    <br /><br />
+                    <i class="fa fa-check-circle-o fa-lg mr-2" aria-hidden="true"></i>
+                    Vehicle change in case of breakdown
+                    <br /><br />
+                    <i class="fa fa-check-circle-o fa-lg mr-2" aria-hidden="true"></i>
+                    Manage your booking online for free
+                    <br /><br />
+                    <i class="fa fa-check-circle-o fa-lg mr-2" aria-hidden="true"></i>
+                    100% comprehensive insurance
+                    <br />
+                  </p><a class="btn btn-secondary btn-xl mr-2 mb-2" target="_blank"
+                    href="/Dashboard.Default.html">EXPLORE NOW <i class="simple-icon-arrow-right"></i></a>
                 </div>
               </div>
-              <div class="col-12 col-xl-7 offset-xl-1 col-lg-7 col-md-6 d-none d-md-block">
+              <div class="col-12 col-xl-7 offset-xl-1 col-lg-7 col-md-6 d-block">
                 <app-last-rental-list></app-last-rental-list>
               </div>
             </div>
-            <div class="row">
-              <div class="col-12 p-0">
+            <div class="row mt-5">
+              <div class="col-12 p-0 mt-5">
+                <app-card-items></app-card-items>
               </div>
             </div>
             <div class="row"><a class="btn btn-circle btn-outline-semi-light hero-circle-button scrollTo"

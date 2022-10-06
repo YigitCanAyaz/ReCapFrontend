@@ -98,6 +98,7 @@ import { HomeLayoutComponent } from './components/home/home-layout/home-layout.c
 import { LastRentalListComponent } from './components/home/last-rental-list/last-rental-list.component';
 import { HideFirstNamePipePipe } from './pipes/hide-first-name-pipe.pipe';
 import { HideLastNamePipePipe } from './pipes/hide-last-name-pipe.pipe';
+import { CardItemsComponent } from './components/home/card-items/card-items.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -193,6 +194,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LastRentalListComponent,
     HideFirstNamePipePipe,
     HideLastNamePipePipe,
+    CardItemsComponent,
   ],
   imports: [
     BrowserModule,

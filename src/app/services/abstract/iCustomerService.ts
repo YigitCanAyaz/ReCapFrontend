@@ -13,4 +13,6 @@ export interface ICustomerService {
   add(customer: Customer): Observable<ResponseModel>;
   update(customer: Customer): Observable<ResponseModel>;
   delete(customer: Customer): Observable<ResponseModel>;
+
+  getAllCustomerLength(): Observable<SingleResponseModel<number>>;
 }

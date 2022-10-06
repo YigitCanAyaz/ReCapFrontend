@@ -14,4 +14,6 @@ export interface IModelService {
   add(model: Model): Observable<ResponseModel>;
   update(model: Model): Observable<ResponseModel>;
   delete(model: Model): Observable<ResponseModel>;
+
+  getAllModelLength(): Observable<SingleResponseModel<number>>;
 }

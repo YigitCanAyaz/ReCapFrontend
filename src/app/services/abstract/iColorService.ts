@@ -10,4 +10,6 @@ export interface IColorService {
   add(color: Color): Observable<ResponseModel>;
   update(color: Color): Observable<ResponseModel>;
   delete(color: Color): Observable<ResponseModel>;
+
+  getAllColorLength(): Observable<SingleResponseModel<number>>;
 }

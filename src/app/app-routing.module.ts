@@ -1,3 +1,4 @@
+import { HomeLayoutComponent } from './components/home/home-layout/home-layout.component';
 import { UserOperationClaimRemoveComponent } from './components/admin/user-operation-claim/user-operation-claim-remove/user-operation-claim-remove.component';
 import { OperationClaimRemoveComponent } from './components/admin/operation-claim/operation-claim-remove/operation-claim-remove.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
@@ -68,7 +69,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   {
     path: '',
-    component: SiteLayoutComponent,
+    component: HomeLayoutComponent,
     children: [
       { path: "", pathMatch: "full", component: CarDetailMenuComponent },
       { path: 'cars', component: CarDetailMenuComponent },

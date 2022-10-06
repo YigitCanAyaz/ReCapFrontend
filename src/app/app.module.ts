@@ -94,6 +94,10 @@ import { OperationClaimViewComponent } from './components/admin/operation-claim/
 import { OperationClaimListComponent } from './components/admin/operation-claim/operation-claim-list/operation-claim-list.component';
 import { OperationClaimFilterPipePipe } from './pipes/operation-claim-filter-pipe.pipe';
 import { UserOperationClaimDetailFilterPipePipe } from './pipes/user-operation-claim-detail-filter-pipe.pipe';
+import { HomeLayoutComponent } from './components/home/home-layout/home-layout.component';
+import { LastRentalListComponent } from './components/home/last-rental-list/last-rental-list.component';
+import { HideFirstNamePipePipe } from './pipes/hide-first-name-pipe.pipe';
+import { HideLastNamePipePipe } from './pipes/hide-last-name-pipe.pipe';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -185,6 +189,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     OperationClaimListComponent,
     OperationClaimFilterPipePipe,
     UserOperationClaimDetailFilterPipePipe,
+    HomeLayoutComponent,
+    LastRentalListComponent,
+    HideFirstNamePipePipe,
+    HideLastNamePipePipe,
   ],
   imports: [
     BrowserModule,

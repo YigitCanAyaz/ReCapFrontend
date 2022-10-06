@@ -15,6 +15,7 @@ import { IRentalService } from '../abstract/iRentalService';
 export class RentalService implements IRentalService {
 
   baseUrl: string = 'https://localhost:44343/api/rentals/';
+  imageUrl = "https://localhost:44343";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -58,6 +59,17 @@ export class RentalService implements IRentalService {
 
   delete(rental: Rental): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "delete", rental);
+  }
+
+  getRentalImage(rentalDetail: RentalDetail): string {
+    if (rentalDetail.imagePath.length === 0) {
+      const path = this.imageUrl + "/Images/default.png";
+      return path;
+    }
+    else {
+      const path = this.imageUrl + rentalDetail.imagePath[0];
+      return path;
+    }
   }
 
 

@@ -32,6 +32,11 @@ export class CustomerService implements ICustomerService {
     return this.httpClient.get<ListResponseModel<Customer>>(path);
   }
 
+  getAllCustomerLength(): Observable<SingleResponseModel<number>> {
+    const path = this.baseUrl + 'getallcustomerlength';
+    return this.httpClient.get<SingleResponseModel<number>>(path);
+  }
+
   getAllCustomerDetails(): Observable<ListResponseModel<CustomerDetail>> {
     const path = this.baseUrl + 'getallcustomerdetails';
     return this.httpClient.get<ListResponseModel<CustomerDetail>>(path);

@@ -21,6 +21,11 @@ export class ColorService implements IColorService {
     return this.httpClient.get<ListResponseModel<Color>>(path);
   }
 
+  getAllColorLength(): Observable<SingleResponseModel<number>> {
+    const path = this.baseUrl + 'getallcolorlength';
+    return this.httpClient.get<SingleResponseModel<number>>(path);
+  }
+
   getById(id: number): Observable<SingleResponseModel<Color>> {
     const path = this.baseUrl + "getbyid?id=" + id;
     return this.httpClient.get<SingleResponseModel<Color>>(path);

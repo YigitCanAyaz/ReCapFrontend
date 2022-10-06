@@ -16,6 +16,7 @@ export class ModelService implements IModelService {
   baseUrl: string = 'https://localhost:44343/api/models/';
 
   constructor(private httpClient: HttpClient) { }
+
   getById(id: number): Observable<SingleResponseModel<Model>> {
     const path = this.baseUrl + "getbyid?id=" + id;
     return this.httpClient.get<SingleResponseModel<Model>>(path);
@@ -25,6 +26,11 @@ export class ModelService implements IModelService {
   getAll(): Observable<ListResponseModel<Model>> {
     const path = this.baseUrl + 'getall';
     return this.httpClient.get<ListResponseModel<Model>>(path);
+  }
+
+  getAllModelLength(): Observable<SingleResponseModel<number>> {
+    const path = this.baseUrl + 'getallmodellength';
+    return this.httpClient.get<SingleResponseModel<number>>(path);
   }
 
   getModelDetailsById(id: number): Observable<SingleResponseModel<ModelDetail>> {

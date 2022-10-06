@@ -20,6 +20,11 @@ export class BrandService implements IBrandService {
     return this.httpClient.get<ListResponseModel<Brand>>(path);
   }
 
+  getAllBrandLength(): Observable<SingleResponseModel<number>> {
+    const path = this.baseUrl + 'getallbrandlength';
+    return this.httpClient.get<SingleResponseModel<number>>(path);
+  }
+
   getById(id: number): Observable<SingleResponseModel<Brand>> {
     const path = this.baseUrl + 'getbyid?id=' + id;
     return this.httpClient.get<SingleResponseModel<Brand>>(path);

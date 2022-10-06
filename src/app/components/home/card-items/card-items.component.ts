@@ -12,9 +12,50 @@ import { BrandService } from 'src/app/services/concrete/brand.service';
 })
 export class CardItemsComponent implements OnInit {
 
+  brandLength: number;
+  modelLength: number;
+  colorLength: number;
+  customerLength: number;
+  rentalLength: number;
+
   constructor(private brandService: BrandService, private modelService: ModelService, private colorService: ColorService, private customerService: CustomerService, private rentalService: RentalService) { }
 
   ngOnInit(): void {
+    this.getAllBrandLength();
+    this.getAllModelLength();
+    this.getAllColorLength();
+    this.getAllCustomerLength();
+    this.getAllRentalLength();
+  }
+
+  getAllBrandLength(): void {
+    this.brandService.getAllBrandLength().subscribe(response => {
+      this.brandLength = response.data;
+    });
+  }
+
+  getAllModelLength(): void {
+    this.modelService.getAllModelLength().subscribe(response => {
+      this.brandLength = response.data;
+    });
+  }
+
+  getAllColorLength(): void {
+    this.colorService.getAllColorLength().subscribe(response => {
+      this.colorLength = response.data;
+    });
+  }
+
+  getAllCustomerLength(): void {
+    this.customerService.getAllCustomerLength().subscribe(response => {
+      this.customerLength = response.data;
+    });
+  }
+
+  getAllRentalLength(): void {
+    this.rentalService.getAllRentalLength().subscribe(response => {
+      this.rentalLength = response.data;
+    });
   }
 
 }

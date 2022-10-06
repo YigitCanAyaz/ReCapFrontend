@@ -7,6 +7,7 @@ export interface RentalDetail {
   modelYear: number;
   firstName: string;
   lastName: string;
+  dailyPrice: number;
   imagePath: string[];
   rentDate: Date;
   returnDate: Date;

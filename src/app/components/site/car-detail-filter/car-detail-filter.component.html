@@ -1,4 +1,4 @@
-<form class="form-inline">
+<div class="form-inline">
   <h5 class="mr-3 mt-1">Detailed Search:</h5>
   <select class="form-control mr-sm-2 pr-5" [(ngModel)]="selectedBrandId">
     <option [ngValue]="undefined" disabled selected>
@@ -19,4 +19,4 @@
   <input type="text" class="form-control mr-sm-2 pr-5" [(ngModel)]="minDailyPrice" placeholder="Minimum Daily Price">
   <input type="text" class="form-control mr-sm-3 pr-5" [(ngModel)]="maxDailyPrice" placeholder="Maximum Daily Price">
   <button (click)="filter()" class="btn btn-primary">Filter</button>
-</form>
+</div>

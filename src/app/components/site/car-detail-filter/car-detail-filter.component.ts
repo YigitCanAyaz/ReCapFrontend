@@ -57,7 +57,7 @@ export class CarDetailFilterComponent implements OnInit {
 
   filter(): void {
 
-    let filterUrl: string = "/cars/filter";
+    let filterUrl: string = "site/cars/filter";
 
     if (this.selectedBrandId) {
       filterUrl += `/brandId/${this.selectedBrandId}`;
@@ -78,7 +78,5 @@ export class CarDetailFilterComponent implements OnInit {
     console.log(filterUrl);
 
     this.router.navigate([filterUrl]);
-
-    "https://localhost:44343/api/cars/getallcardetailsbybrandid?brandid=1colorid?colorid=1mindailyprice?mindailyprice=2000maxdailyprice?maxdailyprice=4000"
   }
 }

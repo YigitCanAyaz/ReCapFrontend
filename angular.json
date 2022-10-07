@@ -34,6 +34,7 @@
               "./src/assets/css/vendor/bootstrap.rtl.only.min.css",
               "./src/assets/css/vendor/fullcalendar.min.css",
               "./src/assets/css/vendor/select2.min.css",
+              "./src/assets/css/vendor/bootstrap-float-label.min.css",
               "./src/assets/css/vendor/select2-bootstrap.min.css",
               "./src/assets/css/vendor/dropzone.min.css",
               "./src/assets/css/vendor/video-js.css",

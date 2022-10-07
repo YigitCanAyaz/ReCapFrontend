@@ -5,32 +5,35 @@
         [minDailyPrice]=minDailyPrice [maxDailyPrice]=maxDailyPrice></app-car-detail-filter>
     </div>
     <div class="float-right">
-      <div>
-        <label for="modelSearch">
-          <input type="text" class="form-control" [(ngModel)]="filterText" id="modelSearch"
-            placeholder="search for model name">
-        </label>
-      </div>
+      <label for="modelSearch" class="has-float-label">
+        <input type="text" class="form-control" [(ngModel)]="filterText" id="modelSearch"
+          placeholder="search for model name">
+        <span>Quick Search</span>
+      </label>
     </div>
   </div>
 </div>
 <div class="row mt-4">
-  <div class="col-md-3" *ngFor="let carDetail of carDetails | carDetailModelFilterPipe: filterText">
+  <div class="col-md-4" *ngFor="let carDetail of carDetails | carDetailModelFilterPipe: filterText">
     <div class="card border-top border-primary border-3">
       <img [src]="getCarImage(carDetail)" class="card-img-top" alt="{{carDetail.modelName}}-image"
-        style="height: 20vh;">
-      <div class="card-body">
-        <h4 class="card-title text-center">{{carDetail.brandName}} </h4>
-        <h6 class="text-center">{{carDetail.modelName}} </h6>
-      </div>
-      <ul class="list-group list-group-flush text-center text-bolder">
-        <li class="list-group-item"><b>Model Year:</b> {{carDetail.modelYear}}</li>
-        <li class="list-group-item"><b>Daily Price:</b> {{carDetail.dailyPrice | currency}}</li>
-      </ul>
+        style="width: 400px; height: 240px;">
+      <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">{{carDetail.colorName |
+        uppercase}}
+      </span>
+      <span class="badge badge-pill badge-theme-1 position-absolute badge-top-right">{{carDetail.brandName |
+        uppercase}}</span>
       <div class="card-body text-center">
-        <a class="btn btn-outline-secondary" routerLink="/cars/car-detail-page/{{carDetail.id}}">Detaya Git</a>
+        <p class="list-item-heading mb-4">{{carDetail.modelName}} {{carDetail.modelYear}} - {{carDetail.dailyPrice |
+          currency}} <a class="btn btn-outline-secondary ml-4"
+            routerLink="/cars/car-detail-page/{{carDetail.id}}">Detaya
+            Git</a>
+        </p>
       </div>
     </div>
-    <br>
   </div>
 </div>
+<label class="form-group has-float-label">
+  <input class="form-control">
+  <span>E-mail</span>
+</label>

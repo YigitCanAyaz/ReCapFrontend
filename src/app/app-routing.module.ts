@@ -70,7 +70,7 @@ const routes: Routes = [
   { path: '', component: HomeLayoutComponent, pathMatch: 'full' },
 
   {
-    path: 'explore',
+    path: 'site',
     component: SiteLayoutComponent,
     children: [
       { path: "", pathMatch: "full", component: CarDetailMenuComponent },

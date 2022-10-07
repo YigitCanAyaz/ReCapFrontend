@@ -67,9 +67,11 @@ import { UserRemoveComponent } from './components/admin/user/user-remove/user-re
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: '', component: HomeLayoutComponent, pathMatch: 'full' },
+
   {
-    path: '',
-    component: HomeLayoutComponent,
+    path: 'explore',
+    component: SiteLayoutComponent,
     children: [
       { path: "", pathMatch: "full", component: CarDetailMenuComponent },
       { path: 'cars', component: CarDetailMenuComponent },
@@ -79,6 +81,7 @@ const routes: Routes = [
       { path: 'cars/filter/brandId/:brandId/colorId/:colorId/minDailyPrice/:minDailyPrice/maxDailyPrice/:maxDailyPrice', component: CarDetailMenuComponent },
     ]
   },
+
   {
     path: 'admin',
     component: AdminLayoutComponent,

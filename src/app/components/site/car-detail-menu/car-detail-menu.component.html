@@ -1,25 +1,55 @@
-<app-car-detail-filter [selectedBrandId]=selectedBrandId [selectedColorId]=selectedColorId [minDailyPrice]=minDailyPrice
-  [maxDailyPrice]=maxDailyPrice></app-car-detail-filter>
-<div class="mb-3">
-  <input type="text" class="form-control" [(ngModel)]="filterText" placeholder="search for model name">
-</div>
-<div class="row">
-  <div class="col-md-3" *ngFor="let carDetail of carDetails | carDetailModelFilterPipe: filterText">
-    <div class="card">
-      <img [src]="getCarImage(carDetail)" class="card-img-top" alt="{{carDetail.modelName}}-image"
-        style="height: 20vh;">
-      <div class="card-body">
-        <h4 class="card-title text-center">{{carDetail.brandName}} </h4>
-        <h6 class="text-center">{{carDetail.modelName}} </h6>
-      </div>
-      <ul class="list-group list-group-flush text-center text-bolder">
-        <li class="list-group-item"><b>Model Year:</b> {{carDetail.modelYear}}</li>
-        <li class="list-group-item"><b>Daily Price:</b> {{carDetail.dailyPrice | currency}}</li>
-      </ul>
-      <div class="card-body text-center">
-        <a class="btn btn-outline-secondary" routerLink="/cars/car-detail-page/{{carDetail.id}}">Detaya Git</a>
-      </div>
+<div class="mt-5">
+  <div class="card mt-5">
+    <div class="card-body">
+      <h5 class="mb-4">Inline</h5>
+
+      <form class="form-inline">
+        <label class="sr-only" for="inlineFormInputName2">Name</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
+
+        <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+        </div>
+
+        <div class="form-check mb-2 mr-sm-2">
+          <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+          <label class="form-check-label" for="inlineFormCheck">
+            Remember me
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-sm btn-outline-primary mb-2">Submit</button>
+      </form>
     </div>
-    <br>
   </div>
+
+  <div class="mb-5">
+    <input type="text" class="form-control" [(ngModel)]="filterText" placeholder="search for model name">
+  </div>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let carDetail of carDetails | carDetailModelFilterPipe: filterText">
+      <div class="card">
+        <img [src]="getCarImage(carDetail)" class="card-img-top" alt="{{carDetail.modelName}}-image"
+          style="height: 20vh;">
+        <div class="card-body">
+          <h4 class="card-title text-center">{{carDetail.brandName}} </h4>
+          <h6 class="text-center">{{carDetail.modelName}} </h6>
+        </div>
+        <ul class="list-group list-group-flush text-center text-bolder">
+          <li class="list-group-item"><b>Model Year:</b> {{carDetail.modelYear}}</li>
+          <li class="list-group-item"><b>Daily Price:</b> {{carDetail.dailyPrice | currency}}</li>
+        </ul>
+        <div class="card-body text-center">
+          <a class="btn btn-outline-secondary" routerLink="/cars/car-detail-page/{{carDetail.id}}">Detaya Git</a>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  <app-car-detail-filter [selectedBrandId]=selectedBrandId [selectedColorId]=selectedColorId
+    [minDailyPrice]=minDailyPrice [maxDailyPrice]=maxDailyPrice></app-car-detail-filter>
 </div>

@@ -13,24 +13,26 @@
   </div>
 </div>
 <div class="row mt-4">
-  <div class="col-md-2" *ngFor="let carDetail of carDetails | carDetailModelFilterPipe: filterText">
-    <div class="card border-top border-primary border-3">
-      <img [src]="getCarImage(carDetail)" class="card-img-top border-bottom border-primary border-3 rounded-bottom"
+  <div class="col-md-2 clickable-car-card" *ngFor="let carDetail of carDetails | carDetailModelFilterPipe: filterText"
+    routerLink="/site/cars/car-detail-page/{{carDetail.id}}">
+    <div class="card border-top border-secondary border-3">
+      <img [src]="getCarImage(carDetail)" class="card-img-top border-bottom border-secondary border-3 rounded-bottom"
         alt="{{carDetail.modelName}}-image" style="width: 300px; height: 180px;
         margin-left: auto;
         margin-right: auto;
         max-height:100%; max-width:100%;">
-      <span class="badge badge-pill badge-theme-2 position-absolute badge-top-left">{{carDetail.colorName |
+      <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">{{carDetail.colorName |
         uppercase}}
       </span>
-      <span class="badge badge-pill badge-theme-2 position-absolute badge-top-right">{{carDetail.brandName |
+      <span class="badge badge-pill badge-theme-1 position-absolute badge-top-right">{{carDetail.brandName |
         uppercase}}</span>
       <div class="card-body text-center">
-        <p class="list-item-heading mb-4">{{carDetail.modelName}} {{carDetail.modelYear}} - {{carDetail.dailyPrice |
-          currency}} <a class="btn btn-outline-secondary ml-4"
-            routerLink="/site/cars/car-detail-page/{{carDetail.id}}">Detaya
-            Git</a>
-        </p>
+        <b>
+          <p class="list-item-heading">{{carDetail.modelName}} {{carDetail.modelYear}} - <span
+              class="text-success">{{carDetail.dailyPrice |
+              currency}}</span>
+          </p>
+        </b>
       </div>
     </div>
   </div>

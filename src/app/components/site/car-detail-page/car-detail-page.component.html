@@ -1,75 +1,11 @@
-<div class="row">
+<div class="row mt-4">
   <div class="col-12 col-md-12 col-xl-8 col-left">
     <div class="card mb-4">
       <div class="card-body">
+        <img [src]="getCarImage(carDetail)" alt="{{carDetail.modelName}}-image" class="responsive"
+          style="margin-left: auto; margin-right: auto; display: block; margin: 0 auto;" />
 
-        <div class="glide details">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <li class="glide__slide">
-                <img alt="detail" src="../../../../assets/img/products/parkin.jpg"
-                  class="responsive border-0 border-radius img-fluid mb-3" />
-              </li>
-              <li class="glide__slide">
-                <img alt="detail" src="../../../../assets/img/products/napoleonshat.jpg"
-                  class="responsive border-0 border-radius img-fluid mb-3" />
-              </li>
-              <li class="glide__slide">
-                <img alt="detail" src="../../../../assets/img/products/marble-cake.jpg"
-                  class="responsive border-0 border-radius img-fluid mb-3" />
-              </li>
-              <li class="glide__slide">
-                <img alt="detail" src="../../../../assets/img/products/fruitcake.jpg"
-                  class="responsive border-0 border-radius img-fluid mb-3" />
-              </li>
-              <li class="glide__slide">
-                <img alt="detail" src="../../../../assets/img/products/magdalena.jpg"
-                  class="responsive border-0 border-radius img-fluid mb-3" />
-              </li>
-              <li class="glide__slide">
-                <img alt="detail" src="../../../../assets/img/products/tea-loaf.jpg"
-                  class="responsive border-0 border-radius img-fluid mb-3" />
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="glide thumbs">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <li class="glide__slide">
-                <img alt="thumb" src="../../../../assets/img/products/parkin-thumb.jpg"
-                  class="responsive border-0 border-radius img-fluid" />
-              </li>
-              <li class="glide__slide">
-                <img alt="thumb" src="../../../../assets/img/products/napoleonshat-thumb.jpg"
-                  class="responsive border-0 border-radius img-fluid" />
-              </li>
-              <li class="glide__slide">
-                <img alt="thumb" src="../../../../assets/img/products/marble-cake-thumb.jpg"
-                  class="responsive border-0 border-radius img-fluid" />
-              </li>
-              <li class="glide__slide">
-                <img alt="thumb" src="../../../../assets/img/products/fruitcake-thumb.jpg"
-                  class="responsive border-0 border-radius img-fluid" />
-              </li>
-              <li class="glide__slide">
-                <img alt="thumb" src="../../../../assets/img/products/magdalena-thumb.jpg"
-                  class="responsive border-0 border-radius img-fluid" />
-              </li>
-              <li class="glide__slide">
-                <img alt="thumb" src="../../../../assets/img/products/tea-loaf-thumb.jpg"
-                  class="responsive border-0 border-radius img-fluid" />
-              </li>
-            </ul>
-          </div>
-          <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i
-                class="simple-icon-arrow-left"></i></button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i
-                class="simple-icon-arrow-right"></i></button>
-          </div>
-        </div>
+        +
       </div>
     </div>
 

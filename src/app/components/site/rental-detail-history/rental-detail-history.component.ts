@@ -23,8 +23,10 @@ export class RentalDetailHistoryComponent implements OnInit {
   }
 
   getAllRentalDetailsByCarId(carId: number): void {
+    console.log(carId);
     this.rentalService.getAllRentalDetailsByCarId(carId).subscribe(response => {
       this.rentalDetails = response.data;
+      console.log(response.data);
     })
   }
 }

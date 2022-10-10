@@ -1,26 +1,14 @@
-<table class="table">
-  <thead class="thead-dark">
+<table class="table table-borderless">
+  <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">carId</th>
-      <th scope="col">customerId</th>
-      <th scope="col">brandName</th>
-      <th scope="col">modelName</th>
-      <th scope="col">modelYear</th>
-      <th scope="col">firstName</th>
-      <th scope="col">lastName</th>
-      <th scope="col">rentDate</th>
-      <th scope="col">returnDate</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Rent Date</th>
+      <th scope="col">Return Date</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let rentalDetail of rentalDetails">
-      <th scope="row">{{rentalDetail.id}}</th>
-      <td>{{rentalDetail.carId}}</td>
-      <td>{{rentalDetail.customerId}}</td>
-      <td>{{rentalDetail.brandName}}</td>
-      <td>{{rentalDetail.modelName}}</td>
-      <td>{{rentalDetail.modelYear}}</td>
       <td>{{rentalDetail.firstName}}</td>
       <td>{{rentalDetail.lastName}</td>
       <td>{{rentalDetail.rentDate}}</td>

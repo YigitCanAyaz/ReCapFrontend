@@ -1,11 +1,9 @@
-<div class="row mt-4">
+<div class="row mt-4" *ngIf="carDetail">
   <div class="col-12 col-md-12 col-xl-8 col-left">
     <div class="card mb-4">
       <div class="card-body">
         <img [src]="getCarImage(carDetail)" alt="{{carDetail.modelName}}-image" class="responsive"
           style="margin-left: auto; margin-right: auto; display: block; margin: 0 auto;" />
-
-        +
       </div>
     </div>
 
@@ -30,55 +28,18 @@
         <div class="tab-content">
           <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
 
-            <p class="font-weight-bold">Augue Vitae Commodo</p>
+            <p class="font-weight-bold">{{carDetail.modelName + " " + carDetail.modelYear}}</p>
             <p>
-              Vivamus ultricies augue vitae commodo condimentum. Nullam
-              faucibus eros eu mauris feugiat, eget consectetur tortor tempus. Sed volutpat
-              mollis dui eget fringilla. Vestibulum blandit urna ut tellus lobortis tristique.
-              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-              Curae; Pellentesque quis cursus mauris. Nam in ornare erat. Vestibulum convallis
-              enim ac massa dapibus consectetur. Maecenas facilisis eros ac felis mattis, eget
-              auctor sapien varius.
-              <br />
-              <br />
-              Nulla non purus fermentum, pulvinar dui condimentum,
-              malesuada nibh. Sed viverra quam urna, at condimentum ante viverra non. Mauris
-              posuere erat sapien, a convallis libero lobortis sit amet. Suspendisse in orci
-              tellus.
+              {{carDetail.description}}
             </p>
             <br />
 
-            <p class="font-weight-bold">Phasellus Efficitur</p>
-
-            <p>
-              Tellus a sem condimentum, vitae convallis sapien feugiat.
-              Aenean non nibh nec nunc aliquam iaculis. Ut quis suscipit nunc. Duis at lectus
-              a est aliquam venenatis vitae eget arcu. Sed egestas felis eget convallis
-              maximus. Curabitur maximus, ligula vel sagittis iaculis, risus nisi tincidunt
-              sem, ut ultricies libero nulla eu ligula. Nam ultricies mollis nulla, sed
-              laoreet leo convallis ac. Mauris nisl risus, tincidunt ac diam aliquet,
-              convallis pellentesque nisi. Nam sit amet libero at odio malesuada ultricies a
-              vitae dolor. Cras in viverra felis, non consequat quam. Praesent a orci enim.
-              Vivamus porttitor nisi at nisl egestas iaculis. Nullam commodo eget dui
-              sollicitudin sagittis. Duis id nibh mollis, hendrerit metus consectetur,
-              ullamcorper risus. Morbi elementum ultrices nunc, quis porta nisi ornare sit
-              amet.
-              <br />
-              <br />
-              Etiam tincidunt orci in nisi aliquam placerat. Aliquam finibus in sem ut
-              vehicula. Morbi eget consectetur leo. Quisque consectetur lectus eros, sed
-              sodales libero ornare cursus. Etiam elementum ut dolor eget hendrerit.
-              Suspendisse eu lacus eu eros lacinia feugiat sit amet non purus.
-              <br />
-              <br />
-              Pellentesque quis cursus mauris. Nam in ornare erat. Vestibulum convallis enim
-              ac massa dapibus consectetur. Maecenas facilisis eros ac felis mattis, eget
-              auctor sapien varius.
-            </p>
             <br />
-            <p class="font-weight-bold">Elementum Ultrices</p>
+            <p class="font-weight-bold">Rental History</p>
 
-            <table class="table table-borderless">
+            <app-rental-detail-history [currentCarId]="carDetail.id"></app-rental-detail-history>
+
+            <!-- <table class="table table-borderless">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -106,7 +67,7 @@
                   <td>@twitter</td>
                 </tr>
               </tbody>
-            </table>
+            </table> -->
 
           </div>
           <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="second-tab">
@@ -523,7 +484,7 @@
   </div>
 </div>
 
-<div *ngIf="dataLoaded===true">
+<div *ngIf="carDetail">
   <table class="table">
     <thead class="thead-dark">
       <tr>

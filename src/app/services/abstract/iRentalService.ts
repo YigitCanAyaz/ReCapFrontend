@@ -11,6 +11,8 @@ export interface IRentalService {
   getAllRentalDetails(): Observable<ListResponseModel<RentalDetail>>;
   getRentalDetailsById(id: number): Observable<SingleResponseModel<RentalDetail>>;
 
+  isCarAvailable(carId: number): Observable<SingleResponseModel<boolean>>;
+
   add(rental: Rental): Observable<ResponseModel>;
   update(rental: Rental): Observable<ResponseModel>;
   delete(rental: Rental): Observable<ResponseModel>;

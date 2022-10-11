@@ -19,6 +19,11 @@ export class RentalService implements IRentalService {
 
   constructor(private httpClient: HttpClient) { }
 
+  isCarAvailable(carId: number): Observable<SingleResponseModel<boolean>> {
+    const path = this.baseUrl + "iscaravailable?carid=" + carId;
+    return this.httpClient.get<SingleResponseModel<boolean>>(path);
+  }
+
   getById(id: number): Observable<SingleResponseModel<Rental>> {
     const path = this.baseUrl + "getbyid?id=" + id;
     return this.httpClient.get<SingleResponseModel<Rental>>(path);

@@ -77,6 +77,18 @@ export class CarService implements ICarService {
     }
   }
 
+  getCarImages(carDetail: CarDetail): string[] {
+    if (carDetail.imagePath.length === 0 || carDetail.imagePath.length === 1) {
+      return [];
+    }
+    else {
+      const carImages = carDetail.imagePath.map((element, index) => {
+        return this.imageUrl + element;
+      });
+      return carImages;
+    }
+  }
+
   add(car: Car): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.baseUrl + "add", car);
   }

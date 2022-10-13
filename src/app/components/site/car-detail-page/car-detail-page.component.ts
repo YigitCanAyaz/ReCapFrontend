@@ -12,7 +12,6 @@ export class CarDetailPageComponent implements OnInit {
 
   carDetail: CarDetail;
   dataLoaded: boolean = false;
-  imageUrl = "https://localhost:44343"
 
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
 
@@ -30,13 +29,10 @@ export class CarDetailPageComponent implements OnInit {
   }
 
   getCarImage(carDetail: CarDetail): string {
-    if (carDetail.imagePath.length === 0) {
-      const path = this.imageUrl + "/Images/default.png";
-      return path;
-    }
-    else {
-      const path = this.imageUrl + carDetail.imagePath;
-      return path;
-    }
+    return this.carService.getCarImage(carDetail);
+  }
+
+  getCarImages(carDetail: CarDetail): string[] {
+    return this.carService.getCarImages(carDetail);
   }
 }

@@ -228,34 +228,21 @@
 
   <div class="col-12 col-md-12 col-xl-4 col-right">
     <div class="card mb-4">
-      <div class="position-absolute card-top-buttons">
-        <button class="btn btn-header-light icon-button">
-          <i class="simple-icon-refresh"></i>
-        </button>
-      </div>
       <div class="card-body">
-        <div class="mb-3">
-          <div class="post-icon mr-3 d-inline-block"><a href="#"><i class="simple-icon-heart mr-1"></i></a> <span>4
-              Likes</span></div>
-          <div class="post-icon d-inline-block"><i class="simple-icon-bubble mr-1"></i> <span>1
-              Comment</span></div>
-        </div>
-        <p class="mb-3">
-          <app-rent-this-car [currentCarId]="carDetail.id"></app-rent-this-car>
-        </p>
-        <p class="text-muted text-small mb-2">Tags</p>
+        <app-rent-this-car [currentCarId]="carDetail.id"></app-rent-this-car>
+        <p class="text-muted text-small mb-2">Features</p>
         <p class="mb-3">
           <a href="#">
-            <span class="badge badge-pill badge-outline-theme-2 mb-1">FRONTEND</span>
+            <span class="badge badge-pill badge-outline-theme-2 mb-1">{{carDetail.modelName | uppercase}}</span>
           </a>
           <a href="#">
-            <span class="badge badge-pill badge-outline-theme-2 mb-1">JAVASCRIPT</span>
+            <span class="badge badge-pill badge-outline-theme-2 mb-1 ml-1">{{carDetail.modelYear}}</span>
           </a>
           <a href="#">
-            <span class="badge badge-pill badge-outline-theme-2 mb-1">SECURITY</span>
+            <span class="badge badge-pill badge-outline-theme-2 mb-1 ml-1">{{carDetail.brandName | uppercase}}</span>
           </a>
           <a href="#">
-            <span class="badge badge-pill badge-outline-theme-2 mb-1">DESIGN</span>
+            <span class="badge badge-pill badge-outline-theme-2 mb-1 ml-1">{{carDetail.colorName | uppercase}}</span>
           </a>
         </p>
       </div>
@@ -263,38 +250,13 @@
 
     <div class="card mb-4 d-none d-lg-block">
       <div class="card-body">
-        <h5 class="card-title"><span>Similar Projects</span><a class="btn-link float-right text-small pt-1"
-            href="#">View All</a>
+        <h5 class="card-title"><span>Other Images</span><a class="btn-link float-right text-small pt-1" href="#">View
+            All</a>
         </h5>
         <div class="row social-image-row gallery">
-          <div class="col-6">
-            <a href="../../../../assets/img/products/marble-cake.jpg">
-              <img class="img-fluid border-radius" src="../../../../assets/img/products/marble-cake-thumb.jpg" />
-            </a>
-          </div>
-          <div class="col-6">
-            <a href="../../../../assets/img/products/parkin.jpg">
-              <img class="img-fluid border-radius" src="../../../../assets/img/products/parkin-thumb.jpg" />
-            </a>
-          </div>
-          <div class="col-6">
-            <a href="img/fruitcake.jpg">
-              <img class="img-fluid border-radius" src="../../../../assets/img/products/fruitcake-thumb.jpg" />
-            </a>
-          </div>
-          <div class="col-6">
-            <a href="img/tea-loaf.jpg">
-              <img class="img-fluid border-radius" src="../../../../assets/img/products/tea-loaf-thumb.jpg" />
-            </a>
-          </div>
-          <div class="col-6">
-            <a href="img/napoleonshat.jpg">
-              <img class="img-fluid border-radius" src="../../../../assets/img/products/napoleonshat-thumb.jpg" />
-            </a>
-          </div>
-          <div class="col-6">
-            <a href="img/magdalena.jpg">
-              <img class="img-fluid border-radius" src="../../../../assets/img/products/magdalena-thumb.jpg" />
+          <div class="col-6" *ngFor="let imagePath of getCarImages(carDetail)">
+            <a routerLink={{imagePath}}>
+              <img class="img-fluid border-radius" src={{imagePath}} alt={{imagePath}} />
             </a>
           </div>
         </div>
